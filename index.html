@@ -61,6 +61,31 @@ nav{position:sticky;top:0;z-index:60;background:rgba(27,29,25,.9);backdrop-filte
 .nav-links a:hover{color:var(--stone)}
 .nav-links .btn{color:#1B1207}
 .menu-toggle{display:none;background:none;border:1px solid var(--line-d);color:var(--stone);border-radius:3px;padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+/* Nav dropdown menus */
+.has-drop{position:relative}
+.has-drop>a{display:inline-flex;align-items:center;gap:7px}
+.has-drop>a .car{width:11px;height:11px;flex:none;transition:transform .18s ease;color:var(--ash)}
+.has-drop:hover>a .car,.has-drop:focus-within>a .car{transform:rotate(180deg);color:var(--ember)}
+.dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);min-width:280px;background:var(--char-2);border:1px solid var(--line-d);border-radius:6px;padding:10px;list-style:none;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:70;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.dropdown::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.has-drop:hover .dropdown,.has-drop:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dropdown li{margin:0}
+.dropdown a{display:block;padding:12px 14px;border-radius:4px;text-decoration:none}
+.dropdown a b{display:block;font-size:14.5px;font-weight:600;color:var(--stone);letter-spacing:-.01em}
+.dropdown a small{display:block;font-size:12.5px;line-height:1.45;color:var(--ash);margin-top:3px;font-weight:400}
+.dropdown a:hover{background:rgba(201,111,59,.12)}
+.dropdown a:hover b{color:var(--ember)}
+.dropdown .all{border-top:1px solid var(--line-d);margin-top:6px;padding-top:6px}
+.dropdown .all a b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
+.dropdown.wide{min-width:560px;padding:12px}
+.dropdown.wide .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 10px;list-style:none}
+@media (max-width:920px){
+  .dropdown{position:static;transform:none;opacity:1;visibility:visible;border:0;background:transparent;padding:0 0 0 14px;min-width:0;box-shadow:none}
+  .dropdown.wide{min-width:0}
+  .dropdown.wide .cols{grid-template-columns:1fr}
+  .dropdown a small{display:none}
+  .has-drop>a .car{display:none}
+}
 
 /* Hero */
 .hero{padding:110px 0 80px;border-bottom:1px solid var(--line-d)}
@@ -141,10 +166,10 @@ nav{position:sticky;top:0;z-index:60;background:rgba(27,29,25,.9);backdrop-filte
 .exp.wide{grid-column:1/-1;background:var(--stone-2)}
 
 /* About */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .about-grid p{color:var(--ash);margin-bottom:16px}
-.profile{display:flex;align-items:center;gap:18px;margin-bottom:26px}
-.profile img{width:110px;height:110px;border-radius:50%;border:2px solid var(--ember);box-shadow:0 0 0 6px rgba(201,111,59,.12)}
+.profile{display:flex;align-items:center;gap:24px;margin-bottom:26px}
+.profile img{width:180px;height:180px;object-fit:cover;border-radius:50%;border:2px solid var(--ember);box-shadow:0 0 0 6px rgba(201,111,59,.12);flex:none}
 .profile .p-name{font-weight:700;font-size:18px;color:var(--stone)}
 .profile .p-role{font-family:var(--mono);font-size:12.5px;color:var(--ash);letter-spacing:.06em;margin-top:4px}
 .fact-list{list-style:none;display:grid;gap:12px;font-family:var(--mono);font-size:14px}
@@ -215,10 +240,26 @@ footer a:hover{color:var(--ember)}
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu(this)">MENU</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#about">About</a></li>
+      <li class="has-drop">
+        <a href="#services" aria-haspopup="true">Services <svg class="car" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="dropdown">
+          <li><a href="pricing.html#website"><b>Website</b></a></li>
+          <li><a href="pricing.html#paid-ads"><b>Paid Ads</b></a></li>
+          <li><a href="pricing.html#media-production"><b>Media</b></a></li>
+        </ul>
+      </li>
+      <li class="has-drop">
+        <a href="#work" aria-haspopup="true">Who We Help <svg class="car" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="dropdown">
+          <li><a href="#work"><b>Remodelers &amp; Outdoor Living</b></a></li>
+          <li><a href="#contact"><b>Local Retail &amp; Hospitality</b></a></li>
+          <li><a href="#contact"><b>Landscapers &amp; Decks</b></a></li>
+          <li><a href="#contact"><b>Plumbers</b></a></li>
+          <li><a href="#contact"><b>Professional Services</b></a></li>
+        </ul>
+      </li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="#about">About Us</a></li>
       <li><a class="btn btn-ember" href="#contact">Book a consultation</a></li>
     </ul>
   </div>
@@ -243,7 +284,6 @@ footer a:hover{color:var(--ember)}
     <p class="lede">We help small businesses — <b>especially contractors and home-service companies</b> — turn websites, ads, and technology into systems that generate leads.</p>
     <div class="hero-ctas">
       <a class="btn btn-ember" href="#contact">Book a consultation</a>
-      <a class="btn btn-line" href="#work">View my work</a>
     </div>
     <p class="hero-loc">// Based in Silicon Valley · Working with Bay Area &amp; remote clients</p>
 
@@ -270,9 +310,9 @@ footer a:hover{color:var(--ember)}
     <span class="eyebrow">Sound familiar?</span>
     <h2 class="reveal">The problems we get hired to fix.</h2>
     <div class="problems reveal" style="margin-top:40px">
-      <div class="problem"><span class="k">01 · Website</span><h3>"Our website is outdated — and it shows."</h3><p>Slow, dated, hard to use on a phone — losing every homeowner who comparison-shops.</p></div>
-      <div class="problem"><span class="k">02 · Leads</span><h3>"We run ads but the leads go nowhere."</h3><p>Ad spend goes out, tracking is broken, and nobody knows which leads became jobs.</p></div>
-      <div class="problem"><span class="k">03 · Operations</span><h3>"Everything lives in someone's head."</h3><p>Quotes, scheduling, and client updates run on memory and text threads — and growth stalls with them.</p></div>
+      <div class="problem"><h3>"Our website is outdated — and it shows."</h3><p>Slow, dated, hard to use on a phone — losing every homeowner who comparison-shops.</p></div>
+      <div class="problem"><h3>"We run ads but the leads go nowhere."</h3><p>Ad spend goes out, tracking is broken, and nobody knows which leads became jobs.</p></div>
+      <div class="problem"><h3>"Everything lives in someone's head."</h3><p>Quotes, scheduling, and client updates run on memory and text threads — and growth stalls with them.</p></div>
     </div>
   </div>
 </section>
@@ -283,23 +323,23 @@ footer a:hover{color:var(--ember)}
     <h2 class="reveal">Three ways we help. <span class="it">One goal:</span> more booked work.</h2>
     <div class="services reveal">
       <div class="svc">
-        <h3><span>Pillar 01</span>Lead systems &amp; ads operations</h3>
-        <div>
-          <p>We fix how your business attracts, captures, and follows up on leads — Meta Ads, tracking, and the flow that turns an inquiry into a booked estimate.</p>
-          <ul><li>lead generation audit</li><li>meta ads &amp; ads tech</li><li>tracking &amp; attribution</li><li>lead follow-up flow</li></ul>
-        </div>
-      </div>
-      <div class="svc">
-        <h3><span>Pillar 02</span>Websites that convert</h3>
+        <h3><span>Websites</span>Websites that convert</h3>
         <div>
           <p>Fast, modern, mobile-first websites — built new or fixed — with one job: turn visitors into inquiries.</p>
           <ul><li>website development</li><li>ui/ux review</li><li>conversion flow</li><li>mobile &amp; accessibility</li></ul>
         </div>
       </div>
       <div class="svc">
-        <h3><span>Pillar 03</span>Digital operations</h3>
+        <h3><span>Paid Ads</span>Lead systems &amp; ads operations</h3>
         <div>
-          <p>We replace manual work — quoting, scheduling, reporting — with practical tools and automations your team will actually use.</p>
+          <p>We fix how your business attracts, captures, and follows up on leads — Meta Ads, tracking, and the flow that turns an inquiry into a booked estimate.</p>
+          <ul><li>lead generation audit</li><li>meta ads &amp; ads tech</li><li>tracking &amp; attribution</li><li>lead follow-up flow</li></ul>
+        </div>
+      </div>
+      <div class="svc">
+        <h3><span>Media</span>Digital operations &amp; media</h3>
+        <div>
+          <p>We replace manual work — quoting, scheduling, reporting, media production — with practical tools and automations your team will actually use.</p>
           <ul><li>workflow audit</li><li>tool selection</li><li>automation</li><li>dashboards &amp; reporting</li></ul>
         </div>
       </div>
@@ -322,7 +362,8 @@ footer a:hover{color:var(--ember)}
 
 <section class="section" id="work">
   <div class="wrap">
-    <span class="eyebrow">Featured case study</span>
+    <span class="eyebrow" style="color:var(--ember);font-size:15px;letter-spacing:.14em;text-transform:uppercase">Who We Help</span>
+    <span class="eyebrow" style="color:var(--ember)">Featured case study</span>
     <h2 class="reveal">Stonefox Builders</h2>
     <p class="muted reveal" style="max-width:60ch">A Bay Area outdoor living and remodeling contractor — excellent craftsmanship, no repeatable system for winning new projects.</p>
 
@@ -379,39 +420,14 @@ footer a:hover{color:var(--ember)}
   </div>
 </section>
 
-<section class="section light" id="experience">
-  <div class="wrap">
-    <span class="eyebrow">Selected experience</span>
-    <h2 class="reveal">An unusual mix — <span class="it">on purpose.</span></h2>
-    <p class="reveal" style="max-width:62ch;color:var(--ink-soft)">Most marketers have never worked inside a contracting business, carried a sales quota, or tested AI systems at Meta. Ashfox Media's founder has done all three.</p>
-    <div class="exp-grid reveal">
-      <div class="exp wide">
-        <h3>Meta (via Wipro)</h3>
-        <span class="role">AI &amp; data quality — software and linguistic testing</span>
-        <p>Tested Meta AI products: multilingual data validation, regex automation, debugging, localization QA — daily work inside the same ad ecosystem my clients spend money on.</p>
-      </div>
-      <div class="exp">
-        <h3>Stonefox Builders</h3>
-        <span class="role">Lead Generation Architect</span>
-        <p>Built the pipeline from Meta ads to booked consultations to landed projects — inside a real contracting business.</p>
-      </div>
-      <div class="exp">
-        <h3>Samsung Semiconductor</h3>
-        <span class="role">Enterprise operations &amp; logistics</span>
-        <p>Inventory systems, logistics, and data reconciliation at enterprise scale.</p>
-      </div>
-      <div class="exp">
-        <h3>AT&amp;T</h3>
-        <span class="role">Front-line sales &amp; CRM</span>
-        <p>Carried a quota and worked CRM daily — firsthand knowledge of what moves a customer from "just looking" to "signed."</p>
-      </div>
-      <div class="exp">
-        <h3>History San José</h3>
-        <span class="role">Website UX &amp; accessibility</span>
-        <p>Improved website UI, accessibility, and digital experience for a public institution.</p>
-      </div>
+<section class="section light" id="experience" style="padding:70px 0">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap">
+    <div>
+      <span class="eyebrow">Selected experience</span>
+      <h2 style="margin-bottom:10px">An unusual mix — <span class="it">on purpose.</span></h2>
+      <p style="max-width:56ch;color:var(--ink-soft)">Meta AI testing, real contracting-business lead generation, enterprise operations, front-line sales. The full story is on its own page.</p>
     </div>
-    <p class="reveal" style="margin-top:26px;font-family:var(--mono);font-size:13px;color:var(--ink-soft)">Also: MIS graduate, San José State University · Python, SQL, Excel, Tableau · AI &amp; analytics projects on request.</p>
+    <a class="btn btn-line" href="experience.html">Experience &amp; background →</a>
   </div>
 </section>
 
