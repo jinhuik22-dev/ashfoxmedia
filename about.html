@@ -61,10 +61,25 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(216
 .nav-links .btn{color:#1B1207}
 @media (max-width:640px){.nav-links a:not(.btn){display:none}}
 
-.phero{padding:110px 0 70px;border-bottom:1px solid var(--line-d)}
+.phero{padding:90px 0 70px;border-bottom:1px solid var(--line-d)}
+.phero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:64px;align-items:center}
+.phero-copy{min-width:0}
 .phero h1{font-size:clamp(40px,6vw,64px);max-width:18ch;margin-bottom:26px}
 .phero .lede{font-size:19px;max-width:58ch;color:var(--ink-soft)}
 .phero .lede b{color:var(--ink);font-weight:600}
+.profile-photo-wrap{display:flex;justify-content:flex-end;align-items:center}
+.profile-photo{display:block;width:min(100%,340px);aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:6px solid var(--ember);box-shadow:0 20px 44px rgba(34,37,31,.18),0 0 0 1px rgba(34,37,31,.08);background:var(--char-2)}
+@media (max-width:820px){
+  .phero{padding:70px 0 58px}
+  .phero-grid{grid-template-columns:1fr;gap:38px}
+  .profile-photo-wrap{justify-content:center}
+  .profile-photo{width:min(72vw,280px);border-width:5px}
+}
+@media (max-width:480px){
+  .phero{padding:54px 0 46px}
+  .phero-grid{gap:30px}
+  .profile-photo{width:min(70vw,230px);border-width:4px}
+}
 
 /* experience entries */
 .xp-item{display:grid;grid-template-columns:220px 1fr;gap:28px;border-top:1px solid var(--line-d);padding:38px 0}
@@ -306,10 +321,15 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </div>
 </nav>
 <header class="phero">
-<div class="wrap">
+<div class="wrap phero-grid">
+<div class="phero-copy">
 <span class="eyebrow">About us</span>
 <h1>We turn messy processes into <span class="it">working systems.</span></h1>
 <p class="lede">A founder-led Bay Area agency combining paid media, conversion systems, and hands-on contractor experience through our collaboration with Chris of Stonefox Builders.</p>
+</div>
+<div class="profile-photo-wrap">
+<img class="profile-photo" src="profile-photo.png" alt="Jinhui Kim, founder of Ashfox Media" width="340" height="340" loading="eager" decoding="async"/>
+</div>
 </div>
 </header>
 <section class="section" style="padding-top:70px">
