@@ -50,7 +50,8 @@ h2 .it,h1 .it{font-family:var(--serif);font-style:italic;font-weight:400;letter-
 .btn-line{border-color:var(--line-d);color:var(--stone);background:transparent}
 .btn-line:hover{border-color:var(--ember);color:var(--ember)}
 
-nav{position:sticky;top:0;z-index:60;background:rgba(27,29,25,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line-d);color:var(--stone);border-radius:3px;padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+nav{position:sticky;top:0;z-index:60;background:rgba(27,29,25,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d);box-shadow:0 8px 24px rgba(0,0,0,.16)}
 .navbar{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:-.01em}
 .logo small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--ash);letter-spacing:.1em;text-transform:uppercase;margin-left:4px}
@@ -182,7 +183,7 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
 
 
 /* Mobile experience refinement — 2026-07 */
-html,body{max-width:100%;overflow-x:hidden}
+html,body{max-width:100%;overflow-x:clip}
 img,svg,video{max-width:100%}
 button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 
@@ -196,7 +197,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .logo{font-size:16px;min-width:0}
   .logo img{width:30px}
   .logo small{display:none}
-  .menu-toggle{min-width:48px;min-height:44px;padding:10px 13px;position:relative;z-index:101}
+  .menu-toggle{display:block;min-width:48px;min-height:44px;padding:10px 13px;position:relative;z-index:101}
 
   body.menu-open{overflow:hidden;touch-action:none}
   .nav-links{

@@ -52,7 +52,7 @@ h2 .it,h1 .it{font-family:var(--serif);font-style:italic;font-weight:400;letter-
 .light .btn-line{border-color:var(--line-l);color:var(--ink)}
 
 /* Nav */
-nav{position:sticky;top:0;z-index:60;background:rgba(27,29,25,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d)}
+nav{position:sticky;top:0;z-index:60;background:rgba(27,29,25,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d);box-shadow:0 8px 24px rgba(0,0,0,.16)}
 .navbar{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:-.01em}
 .logo img{width:34px;height:auto}
@@ -323,7 +323,7 @@ footer a:hover{color:var(--ember)}
 
 
 /* Mobile experience refinement — 2026-07 */
-html,body{max-width:100%;overflow-x:hidden}
+html,body{max-width:100%;overflow-x:clip}
 img,svg,video{max-width:100%}
 button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 
@@ -337,7 +337,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .logo{font-size:16px;min-width:0}
   .logo img{width:30px}
   .logo small{display:none}
-  .menu-toggle{min-width:48px;min-height:44px;padding:10px 13px;position:relative;z-index:101}
+  .menu-toggle{display:block;min-width:48px;min-height:44px;padding:10px 13px;position:relative;z-index:101}
 
   body.menu-open{overflow:hidden;touch-action:none}
   .nav-links{
