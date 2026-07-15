@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Experience &amp; Background — Ashfox Media · Jinhui Kim</title>
-<meta name="description" content="Jinhui Kim's background: Meta AI testing, real contracting-business lead generation, enterprise operations at Samsung, front-line sales at AT&T. An unusual mix — on purpose.">
+<title>About Us — Ashfox Media</title>
+<meta name="description" content="Ashfox Media is a Silicon Valley consultancy that turns messy processes into working systems — AI-first workflow, 15 years of contractor experience, honest consulting.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -127,6 +127,23 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
   .consult-fab{transition:none}
   .fab-book::before{animation:none}
 }
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-grid p{color:var(--ash);margin-bottom:16px}
+.ab-h{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin:28px 0 12px}
+.about-grid .ab-h:first-child{margin-top:0}
+.fact-list{list-style:none;display:grid;gap:12px;font-family:var(--mono);font-size:14px}
+.fact-list li{border:1px solid var(--line-d);border-radius:4px;padding:14px 16px;color:var(--stone)}
+.fact-list li::before{content:"» ";color:var(--ember)}
+/* How we work */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:44px}
+.step{border-top:3px solid var(--forest);padding-top:18px}
+.light .step h3{font-size:18px;margin-bottom:8px}
+.step p{font-size:15.5px;color:var(--ink-soft)}
+.step .k{font-family:var(--mono);font-size:12.5px;color:#A2542B;display:block;margin-bottom:10px}
+@media (max-width:920px){.about-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:680px){.steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -138,14 +155,13 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
   </div>
 </div>
 
-
 <nav>
   <div class="wrap navbar">
-    <a class="logo" href="index.html">Ashfox Media <small>· Experience</small></a>
+    <a class="logo" href="index.html">Ashfox Media <small>· About Us</small></a>
     <ul class="nav-links">
       <li><a href="index.html#services">Services</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li><a href="experience.html">Experience</a></li>
       <li><a class="btn btn-ember" href="index.html#contact">Book a consultation</a></li>
     </ul>
   </div>
@@ -153,86 +169,46 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
 
 <header class="phero">
   <div class="wrap">
-    <span class="eyebrow">Experience &amp; background</span>
-    <h1>An unusual mix — <span class="it">on purpose.</span></h1>
-    <p class="lede">Most marketers have never worked inside a contracting business, carried a sales quota, or tested AI systems at Meta. <b>I've done all three.</b> The thread across every role is the same: take something disorganized and rebuild it into a system that runs better.</p>
+    <span class="eyebrow">About us</span>
+    <h1>We turn messy processes into <span class="it">working systems.</span></h1>
+    <p class="lede">A small Silicon Valley consultancy — <b>AI-first workflow, 15 years of contractor experience,</b> and honest advice about what's worth your money.</p>
   </div>
 </header>
 
-<section class="section">
-  <div class="wrap">
-    <span class="eyebrow">Selected experience</span>
-    <div class="xp">
-      <div class="xp-item">
-        <div>
-          <div class="org">Meta <span class="muted" style="font-weight:400">(via Wipro)</span></div>
-          <span class="role">AI &amp; data quality</span>
-        </div>
-        <div>
-          <p>Software and linguistic testing on Meta AI products: multilingual data validation, regex automation, debugging, and localization QA — daily work inside the same ad ecosystem my clients spend money on.</p>
-          <ul><li>ai product testing</li><li>data validation</li><li>regex automation</li><li>localization qa</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">Stonefox Builders</div>
-          <span class="role">Lead Generation Architect</span>
-        </div>
-        <div>
-          <p>Built the pipeline from Meta ads to booked consultations to landed projects — inside a real Bay Area outdoor living and remodeling contractor. Ads alone don't land projects; the system behind them does.</p>
-          <ul><li>meta ads</li><li>lead capture &amp; follow-up</li><li>source tracking</li><li>booked-to-landed pipeline</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">Samsung Semiconductor</div>
-          <span class="role">Enterprise operations &amp; logistics</span>
-        </div>
-        <div>
-          <p>Inventory systems, logistics, and data reconciliation at enterprise scale — where a broken process isn't an inconvenience, it's a measurable cost.</p>
-          <ul><li>inventory systems</li><li>logistics</li><li>data reconciliation</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">AT&amp;T</div>
-          <span class="role">Front-line sales &amp; CRM</span>
-        </div>
-        <div>
-          <p>Carried a quota and worked CRM daily — firsthand knowledge of what moves a customer from "just looking" to "signed."</p>
-          <ul><li>quota-carrying sales</li><li>crm workflow</li><li>customer journey</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">History San José</div>
-          <span class="role">Website UX &amp; accessibility</span>
-        </div>
-        <div>
-          <p>Improved website UI, accessibility, and digital experience for a public institution.</p>
-          <ul><li>ui/ux</li><li>accessibility</li><li>digital experience</li></ul>
-        </div>
-      </div>
+<section class="section" style="padding-top:70px">
+  <div class="wrap about-grid">
+    <div>
+      <p>We're a small Silicon Valley consultancy. Across AI testing, business operations, and web work, the thread is the same: take something disorganized and rebuild it so it runs better. We like small businesses because the results are visible — a fixed lead flow is booked jobs on a calendar, not a slide in a deck.</p>
+      <p>Behind that is 15 years of contractor experience — we know how jobs are won, quoted, and scheduled, and we build around that. No tools you don't need, no lock-in retainers, no jargon. If something isn't worth your money, we'll say so.</p>
+    </div>
+    <div>
+      <h3 class="ab-h">Core values</h3>
+      <ul class="fact-list" aria-label="Core values">
+      <li>Honesty first — if it's not worth your money, we say so</li>
+      <li>Practical, ethical consulting — no upsells, no lock-in retainers</li>
+      <li>Clients own every account, page, and system we build</li>
+      </ul>
+      <h3 class="ab-h">Our focus</h3>
+      <ul class="fact-list" aria-label="Our focus">
+      <li>15 years of contractor experience on the team</li>
+      <li>Contractors &amp; home-service businesses first</li>
+      <li>Technical + operations + marketing under one roof</li>
+      <li>Plain-English plans, documented handoffs</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="section light">
-  <div class="wrap bg-grid">
-    <div>
-      <span class="eyebrow">Background</span>
-      <h2>Technical + operations + marketing, <span class="it">under one roof.</span></h2>
-      <p class="muted">The combination matters more than any single line on a resume: I've seen how ads are built from inside Meta, how leads become jobs from inside a contracting business, and how operations break at enterprise scale.</p>
+<section class="section light" id="process">
+  <div class="wrap">
+    <span class="eyebrow">How we work</span>
+    <h2>Diagnose first. Build second.</h2>
+    <div class="steps">
+      <div class="step"><span class="k">01</span><h3>Audit</h3><p>We map your website, ads, and lead flow to find where inquiries are lost.</p></div>
+      <div class="step"><span class="k">02</span><h3>Plan</h3><p>A prioritized, plain-English plan: what to fix, in what order, and why.</p></div>
+      <div class="step"><span class="k">03</span><h3>Build</h3><p>We implement it — pages, tracking, ads, automations — with you or your team.</p></div>
+      <div class="step"><span class="k">04</span><h3>Handoff</h3><p>Documented and owned by you. Ongoing support, no locked-in retainers.</p></div>
     </div>
-    <ul class="bg-list">
-      <li><b>Education.</b> MIS graduate, San José State University.</li>
-      <li><b>Technical toolkit.</b> Python, SQL, Excel, Tableau — AI &amp; analytics projects on request.</li>
-      <li><b>How I work.</b> Plain-English plans, documented handoffs, and clients own every account, page, and system we build.</li>
-    </ul>
   </div>
 </section>
 
@@ -252,11 +228,10 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
 
 <footer>
   <div class="wrap foot">
-    <div>© 2026 Ashfox Media · Jinhui Kim</div>
-    <div><a href="index.html">ashfoxmedia.com</a> · <a href="pricing.html">Pricing</a> · <a href="index.html#contact">Book a consultation</a></div>
+    <div>© 2026 Ashfox Media</div>
+    <div><a href="index.html">ashfoxmedia.com</a> · <a href="stonefox.html">Case study</a> · <a href="smbs.html">Who we help</a> · <a href="pricing.html">Pricing</a></div>
   </div>
 </footer>
-
 
 <div class="consult-fab" id="consult-fab">
   <a class="fab-call" href="tel:+14086343473" aria-label="Call (408) 634-3473"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"/></svg><span class="fab-num">(408) 634-3473</span><span class="fab-word">Call</span></a>
