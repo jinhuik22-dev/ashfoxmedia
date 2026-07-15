@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Experience &amp; Background — Ashfox Media · Jinhui Kim</title>
-<meta name="description" content="Jinhui Kim's background: Meta AI testing, real contracting-business lead generation, enterprise operations at Samsung, front-line sales at AT&T. An unusual mix — on purpose.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta content="Jinhui Kim's background: Meta AI testing, real contracting-business lead generation, enterprise operations at Samsung, front-line sales at AT&amp;T. An unusual mix — on purpose." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --char:#1B1D19;
@@ -127,142 +128,172 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
   .consult-fab{transition:none}
   .fab-book::before{animation:none}
 }
+
+/* Restored animated dropdown navigation */
+.has-drop{position:relative}
+.has-drop>a{display:inline-flex;align-items:center;gap:7px}
+.has-drop>a .car{width:11px;height:11px;flex:none;transition:transform .18s ease,color .18s ease;color:var(--ash)}
+.has-drop:hover>a .car,.has-drop:focus-within>a .car{transform:rotate(180deg);color:var(--ember)}
+.dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);min-width:280px;background:var(--char-2);border:1px solid var(--line-d);border-radius:6px;padding:10px;list-style:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:70;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.dropdown::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.has-drop:hover .dropdown,.has-drop:focus-within .dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropdown li{margin:0}
+.dropdown a{display:block;padding:12px 14px;border-radius:4px;text-decoration:none}
+.dropdown a b{display:block;font-size:14.5px;font-weight:600;color:var(--stone);letter-spacing:-.01em}
+.dropdown a small{display:block;font-size:12.5px;line-height:1.45;color:var(--ash);margin-top:3px;font-weight:400}
+.dropdown a:hover{background:rgba(201,111,59,.12)}
+.dropdown a:hover b{color:var(--ember)}
+.dropdown .all{border-top:1px solid var(--line-d);margin-top:6px;padding-top:6px}
+.dropdown .all a b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
+.svc-menu{width:700px;min-width:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:14px}
+.svc-menu a{display:flex;flex-direction:column;gap:10px;height:100%;padding:16px 14px}
+.svc-menu .all{grid-column:1/-1}
+.svc-menu .all a{flex-direction:row;padding:12px 14px}
+.d-ic{flex:none;width:32px;height:32px;border:1px solid var(--line-d);border-radius:5px;display:flex;align-items:center;justify-content:center;color:var(--ember);transition:border-color .15s ease,transform .15s ease}
+.d-ic svg{width:16px;height:16px}
+.svc-menu a:hover .d-ic{border-color:var(--ember);transform:translateY(-1px)}
+.who-menu{width:520px;grid-template-columns:repeat(2,1fr)}
+@media (max-width:920px){
+  .dropdown{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;border:0;background:transparent;padding:0 0 0 14px;min-width:0;box-shadow:none}
+  .dropdown a small{display:none}
+  .d-ic{display:none}
+  .svc-menu,.who-menu{display:block;width:auto;padding:0 0 0 14px}
+  .svc-menu a{display:block;padding:12px 14px}
+  .has-drop>a .car{display:none}
+}
+
 </style>
 </head>
 <body>
-
 <div class="topbar">
-  <div class="wrap topbar-in">
-    <span class="topbar-note">Bay Area contractor marketing · Month-to-month · You own every account</span>
-    <a class="topbar-tel" href="tel:+14086343473" aria-label="Call Ashfox Media at (408) 634-3473"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"/></svg> (408) 634-3473</a>
-  </div>
+<div class="wrap topbar-in">
+<span class="topbar-note">Bay Area contractor marketing · Month-to-month · You own every account</span>
+<a aria-label="Call Ashfox Media at (408) 634-3473" class="topbar-tel" href="tel:+14086343473"><svg aria-hidden="true" viewbox="0 0 16 16"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"></path></svg> (408) 634-3473</a>
 </div>
-
-
+</div>
 <nav>
-  <div class="wrap navbar">
-    <a class="logo" href="index.html">Ashfox Media <small>· Experience</small></a>
-    <ul class="nav-links">
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="smbs.html">Who We Help</a></li>
-      <li><a href="stonefox.html">Case Study</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a></li>
-    </ul>
-  </div>
+<div class="wrap navbar">
+<a class="logo" href="index.html">Ashfox Media <small>· Experience</small></a>
+<ul class="nav-links" id="nav-links">
+<li class="has-drop"><a aria-haspopup="true" href="index.html#services">Services <svg aria-hidden="true" class="car" fill="none" viewbox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path></svg></a>
+<ul class="dropdown svc-menu">
+<li><a href="pricing.html#website"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><rect height="9" rx="1.5" width="13" x="1.5" y="2.5"></rect><path d="M5.5 14h5M8 11.5V14"></path></svg></span><span><b>Websites</b><small>Mobile-first sites and landing pages built to turn visitors into qualified inquiries.</small></span></a></li>
+<li><a href="pricing.html#paid-ads"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M1.5 11.5l4-4 2.5 2.5 5-5.5"></path><path d="M9.5 4.5H13V8"></path></svg></span><span><b>Paid Ads</b><small>Google and Meta campaigns connected to tracking, lead capture, and follow-up.</small></span></a></li>
+<li><a href="pricing.html#media-production"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M2 5h2.2l1-1.5h5.6l1 1.5H14v8H2z"></path><circle cx="8" cy="9" r="2.4"></circle></svg></span><span><b>Media Production</b><small>Drone, photo, video, and creative assets for contractor campaigns and websites.</small></span></a></li>
+<li class="all"><a href="pricing.html"><b>View services &amp; pricing →</b></a></li>
+</ul></li>
+<li class="has-drop"><a aria-haspopup="true" href="smbs.html">Who We Help <svg aria-hidden="true" class="car" fill="none" viewbox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path></svg></a>
+<ul class="dropdown svc-menu who-menu">
+<li><a href="stonefox.html"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M2 8l6-5.5L14 8"></path><path d="M3.5 7v6.5h9V7"></path></svg></span><span><b>Stonefox Builders</b><small>See how campaigns, lead capture, follow-up, and consultation tracking became one process.</small></span></a></li>
+<li><a href="smbs.html"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M2 6l1-3h10l1 3"></path><path d="M2.5 6v7.5h11V6"></path><path d="M6 13.5V9.5h4v4"></path></svg></span><span><b>Bay Area Contractors</b><small>Remodelers, deck builders, outdoor-living companies, and selected home-service trades.</small></span></a></li>
+</ul></li>
+<li><a href="stonefox.html">Case Study</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="about.html">About</a></li>
+<li><a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a></li>
+</ul>
+</div>
 </nav>
-
 <header class="phero">
-  <div class="wrap">
-    <span class="eyebrow">Experience &amp; background</span>
-    <h1>An unusual mix — <span class="it">on purpose.</span></h1>
-    <p class="lede">Most marketers have never worked inside a contracting business, carried a sales quota, or tested AI systems at Meta. <b>I've done all three.</b> The thread across every role is the same: take something disorganized and rebuild it into a system that runs better.</p>
-  </div>
+<div class="wrap">
+<span class="eyebrow">Experience &amp; background</span>
+<h1>An unusual mix — <span class="it">on purpose.</span></h1>
+<p class="lede">Most marketers have never worked inside a contracting business, carried a sales quota, or tested AI systems at Meta. <b>I've done all three.</b> The thread across every role is the same: take something disorganized and rebuild it into a system that runs better.</p>
+</div>
 </header>
-
 <section class="section">
-  <div class="wrap">
-    <span class="eyebrow">Selected experience</span>
-    <div class="xp">
-      <div class="xp-item">
-        <div>
-          <div class="org">Meta <span class="muted" style="font-weight:400">(via Wipro)</span></div>
-          <span class="role">AI &amp; data quality</span>
-        </div>
-        <div>
-          <p>Software and linguistic testing on Meta AI products: multilingual data validation, regex automation, debugging, and localization QA — technical work within Meta’s broader product ecosystem, with an emphasis on data quality, automation, and user experience.</p>
-          <ul><li>ai product testing</li><li>data validation</li><li>regex automation</li><li>localization qa</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">Stonefox Builders</div>
-          <span class="role">Lead Generation Architect</span>
-        </div>
-        <div>
-          <p>Built the pipeline from Meta ads to booked consultations to landed projects — inside a real Bay Area outdoor living and remodeling contractor. Ads alone don't land projects; the system behind them does.</p>
-          <ul><li>meta ads</li><li>lead capture &amp; follow-up</li><li>source tracking</li><li>booked-to-landed pipeline</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">Samsung Semiconductor</div>
-          <span class="role">Enterprise operations &amp; logistics</span>
-        </div>
-        <div>
-          <p>Inventory systems, logistics, and data reconciliation at enterprise scale — where a broken process isn't an inconvenience, it's a measurable cost.</p>
-          <ul><li>inventory systems</li><li>logistics</li><li>data reconciliation</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">AT&amp;T</div>
-          <span class="role">Front-line sales &amp; CRM</span>
-        </div>
-        <div>
-          <p>Carried a quota and worked CRM daily — firsthand knowledge of what moves a customer from "just looking" to "signed."</p>
-          <ul><li>quota-carrying sales</li><li>crm workflow</li><li>customer journey</li></ul>
-        </div>
-      </div>
-
-      <div class="xp-item">
-        <div>
-          <div class="org">History San José</div>
-          <span class="role">Website UX &amp; accessibility</span>
-        </div>
-        <div>
-          <p>Improved website UI, accessibility, and digital experience for a public institution.</p>
-          <ul><li>ui/ux</li><li>accessibility</li><li>digital experience</li></ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<span class="eyebrow">Selected experience</span>
+<div class="xp">
+<div class="xp-item">
+<div>
+<div class="org">Meta <span class="muted" style="font-weight:400">(via Wipro)</span></div>
+<span class="role">AI &amp; data quality</span>
+</div>
+<div>
+<p>Software and linguistic testing on Meta AI products: multilingual data validation, regex automation, debugging, and localization QA — technical work within Meta’s broader product ecosystem, with an emphasis on data quality, automation, and user experience.</p>
+<ul><li>ai product testing</li><li>data validation</li><li>regex automation</li><li>localization qa</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div>
+<div class="org">Stonefox Builders</div>
+<span class="role">Lead Generation Architect</span>
+</div>
+<div>
+<p>Built the pipeline from Meta ads to booked consultations to landed projects — inside a real Bay Area outdoor living and remodeling contractor. Ads alone don't land projects; the system behind them does.</p>
+<ul><li>meta ads</li><li>lead capture &amp; follow-up</li><li>source tracking</li><li>booked-to-landed pipeline</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div>
+<div class="org">Samsung Semiconductor</div>
+<span class="role">Enterprise operations &amp; logistics</span>
+</div>
+<div>
+<p>Inventory systems, logistics, and data reconciliation at enterprise scale — where a broken process isn't an inconvenience, it's a measurable cost.</p>
+<ul><li>inventory systems</li><li>logistics</li><li>data reconciliation</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div>
+<div class="org">AT&amp;T</div>
+<span class="role">Front-line sales &amp; CRM</span>
+</div>
+<div>
+<p>Carried a quota and worked CRM daily — firsthand knowledge of what moves a customer from "just looking" to "signed."</p>
+<ul><li>quota-carrying sales</li><li>crm workflow</li><li>customer journey</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div>
+<div class="org">History San José</div>
+<span class="role">Website UX &amp; accessibility</span>
+</div>
+<div>
+<p>Improved website UI, accessibility, and digital experience for a public institution.</p>
+<ul><li>ui/ux</li><li>accessibility</li><li>digital experience</li></ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <section class="section light">
-  <div class="wrap bg-grid">
-    <div>
-      <span class="eyebrow">Background</span>
-      <h2>Technical + operations + marketing, <span class="it">under one roof.</span></h2>
-      <p class="muted">The combination matters more than any single line on a resume: I've seen how ads are built from inside Meta, how leads become jobs from inside a contracting business, and how operations break at enterprise scale.</p>
-    </div>
-    <ul class="bg-list">
-      <li><b>Education.</b> MIS graduate, San José State University.</li>
-      <li><b>Technical toolkit.</b> Python, SQL, Excel, Tableau — AI &amp; analytics projects on request.</li>
-      <li><b>How I work.</b> Plain-English plans, documented handoffs, and clients own every account, page, and system we build.</li>
-    </ul>
-  </div>
+<div class="wrap bg-grid">
+<div>
+<span class="eyebrow">Background</span>
+<h2>Technical + operations + marketing, <span class="it">under one roof.</span></h2>
+<p class="muted">The combination matters more than any single line on a resume: I've seen how ads are built from inside Meta, how leads become jobs from inside a contracting business, and how operations break at enterprise scale.</p>
+</div>
+<ul class="bg-list">
+<li><b>Education.</b> MIS graduate, San José State University.</li>
+<li><b>Technical toolkit.</b> Python, SQL, Excel, Tableau — AI &amp; analytics projects on request.</li>
+<li><b>How I work.</b> Plain-English plans, documented handoffs, and clients own every account, page, and system we build.</li>
+</ul>
+</div>
 </section>
-
 <section class="section cta" id="consult">
-  <div class="wrap inner">
-    <div>
-      <span class="eyebrow">Next step</span>
-      <h2 style="margin-bottom:10px">Let's look at your business <span class="it">together.</span></h2>
-      <p>Tell us what's not working. We'll review it before the call — it's about your situation, not a sales script.</p>
-    </div>
-    <div style="display:grid;justify-items:start">
-      <a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a>
-      <a class="tel-inline" href="tel:+14086343473">// or call <b>(408) 634-3473</b></a>
-    </div>
-  </div>
+<div class="wrap inner">
+<div>
+<span class="eyebrow">Next step</span>
+<h2 style="margin-bottom:10px">Let's look at your business <span class="it">together.</span></h2>
+<p>Tell us what's not working. We'll review it before the call — it's about your situation, not a sales script.</p>
+</div>
+<div style="display:grid;justify-items:start">
+<a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a>
+<a class="tel-inline" href="tel:+14086343473">// or call <b>(408) 634-3473</b></a>
+</div>
+</div>
 </section>
-
 <footer>
-  <div class="wrap foot">
-    <div>© 2026 Ashfox Media · Jinhui Kim</div>
-    <div><a href="index.html">ashfoxmedia.com</a> · <a href="pricing.html">Pricing</a> · <a href="index.html#contact">Book a Free Strategy Call</a></div>
-  </div>
+<div class="wrap foot">
+<div>© 2026 Ashfox Media · Jinhui Kim</div>
+<div><a href="index.html">ashfoxmedia.com</a> · <a href="pricing.html">Pricing</a> · <a href="index.html#contact">Book a Free Strategy Call</a></div>
+</div>
 </footer>
-
-
 <div class="consult-fab" id="consult-fab">
-  <a class="fab-call" href="tel:+14086343473" aria-label="Call (408) 634-3473"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"/></svg><span class="fab-num">(408) 634-3473</span><span class="fab-word">Call</span></a>
-  <a class="fab-book" href="index.html#contact">Free Strategy Call</a>
+<a aria-label="Call (408) 634-3473" class="fab-call" href="tel:+14086343473"><svg aria-hidden="true" viewbox="0 0 16 16"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"></path></svg><span class="fab-num">(408) 634-3473</span><span class="fab-word">Call</span></a>
+<a class="fab-book" href="index.html#contact">Free Strategy Call</a>
 </div>
 <script>
 (function(){
