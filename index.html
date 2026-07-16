@@ -102,21 +102,26 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 /* Hero */
 .hero{padding:110px 0 80px;border-bottom:1px solid var(--line-d)}
 .hero .wrap{position:relative}
-.orbit{position:absolute;right:24px;top:60px;width:min(340px,30vw);aspect-ratio:1;pointer-events:none}
-.orbit-ring{position:absolute;inset:0;border:1.5px dashed rgba(201,111,59,.38);border-radius:50%;animation:orbitSpin 60s linear infinite}
-.orbit-hub{position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:var(--ember);color:#1B1207;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(201,111,59,.12),0 0 44px rgba(201,111,59,.35);animation:hubPulse 3.2s ease-in-out infinite}
-.orbit-hub svg{width:34px;height:34px}
-.orbiter{position:absolute;left:50%;top:50%;width:0;height:0;animation:orbitSpin 20s linear infinite}
-.orbiter.o2{animation-delay:-6.667s}
-.orbiter.o3{animation-delay:-13.333s}
-.orbit-icon{position:absolute;left:0;top:0;width:58px;height:58px;margin:-29px 0 0 -29px;transform:translateY(calc(min(340px,30vw)/-2));display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--char-2);border:1px solid var(--line-d);color:var(--ember);box-shadow:0 10px 28px rgba(0,0,0,.45)}
-.orbit-icon svg{width:28px;height:28px;animation:orbitSpinRev 20s linear infinite}
-.orbiter.o2 .orbit-icon svg{animation-delay:-6.667s}
-.orbiter.o3 .orbit-icon svg{animation-delay:-13.333s}
-@keyframes orbitSpin{to{transform:rotate(360deg)}}
-@keyframes orbitSpinRev{to{transform:rotate(-360deg)}}
-@keyframes hubPulse{0%,100%{box-shadow:0 0 0 10px rgba(201,111,59,.12),0 0 44px rgba(201,111,59,.35)}50%{box-shadow:0 0 0 16px rgba(201,111,59,.07),0 0 60px rgba(201,111,59,.5)}}
-@media (max-width:920px){.orbit{display:none}}
+.geartrain{position:absolute;right:-10px;top:10px;width:min(520px,38vw);pointer-events:none}
+.geartrain svg{width:100%;height:auto;display:block}
+.gear path{fill:#23261E;stroke:rgba(237,238,230,.25);stroke-width:1.5;stroke-linejoin:round}
+.g-driver path{fill:rgba(201,111,59,.16);stroke:var(--ember);stroke-width:2}
+.gear .rim{fill:none;stroke:rgba(237,238,230,.18);stroke-width:1.5;stroke-dasharray:4 7}
+.g-driver .rim{stroke:rgba(201,111,59,.55)}
+.gear .hubdot{fill:var(--ember)}
+.gear .pin{fill:none;stroke:rgba(237,238,230,.3);stroke-width:1.5}
+.glabels text{font-family:var(--mono);fill:var(--ink);letter-spacing:.12em}
+.gl-big{font-size:17px;font-weight:700;fill:var(--ember)}
+.gl-mid{font-size:15px;font-weight:700;fill:var(--ink)}
+.gl-small{font-size:11px;font-weight:700;fill:var(--ink)}
+.gl-sub{font-size:9.5px;fill:var(--ink-soft);letter-spacing:.2em;text-transform:uppercase}
+.gear{transform-box:fill-box;transform-origin:center}
+.g-driver{animation:spinCW 36s linear infinite}
+.g-idler{animation:spinCCW 21.6s linear infinite}
+.g-follower{animation:spinCW 14.4s linear infinite}
+@keyframes spinCW{to{transform:rotate(360deg)}}
+@keyframes spinCCW{to{transform:rotate(-360deg)}}
+@media (max-width:920px){.geartrain{display:none}}
 .hero h1{font-size:clamp(40px,6vw,72px);max-width:16ch;margin-bottom:26px}
 .hero .lede{font-size:19px;max-width:56ch;color:var(--ink-soft);margin-bottom:14px}
 .hero .lede b{color:var(--ink);font-weight:600}
@@ -233,9 +238,7 @@ footer a:hover{color:var(--ember)}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .sysline .flow{animation:none}
-  .orbit-ring,.orbiter,.orbit-icon svg,.orbit-hub{animation:none}
-  .orbiter.o1{transform:rotate(0deg)}.orbiter.o2{transform:rotate(120deg)}.orbiter.o3{transform:rotate(240deg)}
-  .orbiter.o2 .orbit-icon svg{transform:rotate(-120deg)}.orbiter.o3 .orbit-icon svg{transform:rotate(-240deg)}
+  .gear{animation:none}
   .btn{transition:none}
 }
 
@@ -459,12 +462,21 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </nav>
 <header class="hero" id="top">
 <div class="wrap">
-<div aria-hidden="true" class="orbit">
-<div class="orbit-ring"></div>
-<div class="orbit-hub"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M4 18L10 12L14 15L20 7"/><path d="M14 7h6v6"/></svg></div>
-<div class="orbiter o1"><span class="orbit-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.6v2.8M12 18.6v2.8M2.6 12h2.8M18.6 12h2.8M5.4 5.4l2 2M16.6 16.6l2 2M18.6 5.4l-2 2M7.4 16.6l-2 2"/></svg></span></div>
-<div class="orbiter o2"><span class="orbit-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><rect height="12" rx="2" width="12" x="6" y="6"/><path d="M9 6V3.5M15 6V3.5M9 20.5V18M15 20.5V18M6 9H3.5M6 15H3.5M20.5 9H18M20.5 15H18"/><text fill="currentColor" font-family="inherit" font-size="7" font-weight="700" stroke="none" text-anchor="middle" x="12" y="14.6">AI</text></svg></span></div>
-<div class="orbiter o3"><span class="orbit-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M3.5 11.5L12 4l8.5 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></span></div>
+<div aria-hidden="true" class="geartrain">
+<svg viewBox="0 0 545 465" xmlns="http://www.w3.org/2000/svg">
+<g class="gear g-driver"><path d="M305.8 315.0 L305.7 320.1 L322.7 323.0 L322.2 328.9 L304.9 328.9 L303.4 338.0 L302.2 343.0 L318.3 349.4 L316.6 355.1 L299.6 351.4 L296.2 360.1 L294.0 364.7 L308.4 374.3 L305.6 379.5 L289.8 372.4 L284.6 380.1 L281.5 384.2 L293.6 396.6 L289.8 401.0 L275.8 390.8 L269.1 397.3 L265.3 400.7 L274.5 415.3 L269.8 418.9 L258.2 406.0 L250.4 411.0 L245.9 413.4 L251.9 429.7 L246.6 432.2 L237.9 417.1 L229.2 420.4 L224.3 421.8 L226.8 439.0 L221.1 440.3 L215.8 423.8 L206.6 425.2 L201.5 425.6 L200.4 442.9 L194.5 443.0 L192.7 425.8 L183.4 425.2 L178.4 424.5 L173.7 441.2 L167.9 440.1 L169.7 422.9 L160.8 420.4 L155.9 418.7 L147.9 434.0 L142.4 431.7 L147.8 415.3 L139.6 411.0 L135.2 408.3 L124.2 421.6 L119.3 418.2 L128.0 403.3 L120.9 397.3 L117.1 393.8 L103.5 404.6 L99.5 400.2 L111.1 387.4 L105.4 380.1 L102.5 375.9 L86.9 383.6 L83.9 378.5 L97.9 368.4 L93.8 360.1 L91.8 355.4 L75.0 359.6 L73.1 354.0 L88.9 347.0 L86.6 338.0 L85.7 333.0 L68.4 333.7 L67.6 327.8 L84.6 324.3 L84.2 315.0 L84.3 309.9 L67.3 307.0 L67.8 301.1 L85.1 301.1 L86.6 292.0 L87.8 287.0 L71.7 280.6 L73.4 274.9 L90.4 278.6 L93.8 269.9 L96.0 265.3 L81.6 255.7 L84.4 250.5 L100.2 257.6 L105.4 249.9 L108.5 245.8 L96.4 233.4 L100.2 229.0 L114.2 239.2 L120.9 232.7 L124.7 229.3 L115.5 214.7 L120.2 211.1 L131.8 224.0 L139.6 219.0 L144.1 216.6 L138.1 200.3 L143.4 197.8 L152.1 212.9 L160.8 209.6 L165.7 208.2 L163.2 191.0 L168.9 189.7 L174.2 206.2 L183.4 204.8 L188.5 204.4 L189.6 187.1 L195.5 187.0 L197.3 204.2 L206.6 204.8 L211.6 205.5 L216.3 188.8 L222.1 189.9 L220.3 207.1 L229.2 209.6 L234.1 211.3 L242.1 196.0 L247.6 198.3 L242.2 214.7 L250.4 219.0 L254.8 221.7 L265.8 208.4 L270.7 211.8 L262.0 226.7 L269.1 232.7 L272.9 236.2 L286.5 225.4 L290.5 229.8 L278.9 242.6 L284.6 249.9 L287.5 254.1 L303.1 246.4 L306.1 251.5 L292.1 261.6 L296.2 269.9 L298.2 274.6 L315.0 270.4 L316.9 276.0 L301.1 283.0 L303.4 292.0 L304.3 297.0 L321.6 296.3 L322.4 302.2 L305.4 305.7 Z"/><circle class="rim" cx="195" cy="315" r="88"/><circle class="hubdot" cx="195" cy="315" r="7"/><circle class="pin" cx="195" cy="255" r="5"/><circle class="pin" cx="247" cy="345" r="5"/><circle class="pin" cx="143" cy="345" r="5"/></g>
+<g class="gear g-idler"><path d="M409.1 196.8 L408.9 201.6 L425.9 205.2 L425.0 211.2 L407.7 209.8 L405.3 218.3 L403.5 222.7 L418.2 231.9 L415.3 237.3 L399.6 230.1 L394.4 237.2 L391.2 240.7 L401.9 254.3 L397.3 258.4 L385.0 246.3 L377.7 251.2 L373.4 253.4 L378.8 269.9 L373.1 272.2 L365.7 256.5 L357.2 258.6 L352.4 259.3 L351.9 276.6 L345.7 276.8 L344.1 259.6 L335.4 258.6 L330.7 257.6 L324.2 273.7 L318.4 271.8 L322.8 255.0 L314.9 251.2 L310.8 248.6 L299.3 261.5 L294.4 257.7 L304.3 243.5 L298.2 237.2 L295.2 233.4 L280.0 241.5 L276.7 236.3 L290.8 226.3 L287.3 218.3 L285.8 213.7 L268.7 216.1 L267.4 210.1 L284.1 205.5 L283.5 196.8 L283.7 192.0 L266.7 188.4 L267.6 182.4 L284.9 183.7 L287.3 175.3 L289.1 170.9 L274.4 161.7 L277.3 156.3 L293.0 163.5 L298.2 156.4 L301.4 152.9 L290.7 139.2 L295.3 135.2 L307.6 147.3 L314.9 142.4 L319.2 140.2 L313.8 123.7 L319.5 121.4 L326.9 137.1 L335.4 134.9 L340.2 134.3 L340.7 117.0 L346.9 116.8 L348.5 134.0 L357.2 134.9 L361.9 136.0 L368.3 119.9 L374.2 121.8 L369.8 138.6 L377.7 142.4 L381.8 145.0 L393.3 132.1 L398.1 135.9 L388.3 150.1 L394.4 156.4 L397.4 160.2 L412.6 152.1 L415.9 157.3 L401.7 167.3 L405.3 175.3 L406.8 179.9 L423.9 177.4 L425.2 183.5 L408.5 188.1 Z"/><circle class="rim" cx="346.3" cy="196.8" r="48"/><circle class="hubdot" cx="346.3" cy="196.8" r="6"/></g>
+<g class="gear g-follower"><path d="M494.7 148.0 L494.5 152.4 L511.2 156.7 L509.9 163.0 L492.8 160.0 L489.5 167.4 L487.1 171.1 L499.4 183.2 L495.1 188.0 L481.9 176.8 L475.3 181.6 L471.3 183.6 L476.0 200.3 L469.9 202.2 L464.0 185.9 L455.9 186.8 L451.5 186.5 L447.2 203.3 L440.9 201.9 L443.9 184.9 L436.5 181.6 L432.8 179.1 L420.7 191.5 L415.9 187.2 L427.1 173.9 L422.3 167.4 L420.3 163.4 L403.6 168.1 L401.7 161.9 L418.0 156.1 L417.1 148.0 L417.4 143.5 L400.6 139.2 L402.0 132.9 L419.0 136.0 L422.3 128.6 L424.8 124.9 L412.4 112.7 L416.7 108.0 L430.0 119.2 L436.5 114.4 L440.5 112.4 L435.9 95.7 L442.0 93.7 L447.9 110.0 L455.9 109.2 L460.4 109.4 L464.7 92.7 L471.0 94.0 L467.9 111.1 L475.3 114.4 L479.1 116.8 L491.2 104.5 L495.9 108.8 L484.8 122.0 L489.5 128.6 L491.5 132.6 L508.2 127.9 L510.2 134.1 L493.9 139.9 Z"/><circle class="rim" cx="455.9" cy="148.0" r="29"/><circle class="hubdot" cx="455.9" cy="148.0" r="5"/></g>
+<g class="glabels">
+<text x="195" y="293" text-anchor="middle" class="gl-big">BUSINESS</text>
+<text x="195" y="313" text-anchor="middle" class="gl-big">GROWTH</text>
+<text x="195" y="337" text-anchor="middle" class="gl-sub">driver</text>
+<text x="346.3" y="197.8" text-anchor="middle" class="gl-mid">AI</text>
+<text x="346.3" y="216.8" text-anchor="middle" class="gl-sub">idler</text>
+<text x="455.9" y="92.0" text-anchor="middle" class="gl-small">CONSTRUCTION</text>
+<text x="455.9" y="106.0" text-anchor="middle" class="gl-sub">follower</text>
+</g>
+</svg>
 </div>
 <span class="eyebrow" style="font-size:17px;letter-spacing:.16em">Lead generation systems for Bay Area contractors</span>
 <h1>Turn ad spend into <span class="it">qualified estimates.</span></h1>
