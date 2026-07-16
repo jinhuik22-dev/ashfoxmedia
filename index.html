@@ -183,6 +183,8 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 .edge{border-top:3px solid var(--ember);padding-top:18px}
 .edge h3{font-size:18px;margin-bottom:8px}
 .edge p{font-size:15.5px;color:var(--ink-soft)}
+.edge-logo{width:100%;aspect-ratio:2/1;overflow:hidden;margin:4px 0 16px;border-radius:4px;background:#fff}
+.edge-logo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 52%}
 @media (max-width:920px){.edge-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:680px){.edge-grid{grid-template-columns:1fr}}
 
@@ -577,7 +579,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <span class="eyebrow">Our edge</span>
 <h2 class="reveal">An unusual mix — <span class="it">on purpose.</span></h2>
 <div class="edge-grid reveal">
-<div class="edge"><h3>Built inside a contracting business</h3><p>Ashfox is developed in collaboration with Chris of Stonefox Builders, bringing hands-on construction, estimating, and project experience into the marketing process.</p></div>
+<div class="edge"><div class="edge-logo"><img alt="Stonefox Builders" loading="lazy" src="assets/stonefox-builders-logo.png"/></div><h3>Built inside a contracting business</h3><p>Ashfox is developed in collaboration with Chris of Stonefox Builders, bringing hands-on construction, estimating, and project experience into the marketing process.</p></div>
 <div class="edge"><h3>Technical tracking and data experience</h3><p>Our background in testing, data quality, and automation at Meta shapes how we approach campaign structure, tracking, and performance analysis.</p></div>
 <div class="edge"><h3>You own everything</h3><p>Your website, domain, ad accounts, pixels, creative, and data stay in your name. No lock-in and no hostage accounts.</p></div>
 <div class="edge"><h3>Lean, founder-led service</h3><p>We use automation and modern tools to move faster, report clearly, and keep overhead lower than a traditional agency.</p></div>
