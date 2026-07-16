@@ -131,6 +131,9 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
 }
 
 /* Case study */
+.case-title{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.partner-logo{display:inline-block;width:190px;aspect-ratio:2/1;overflow:hidden;border-radius:4px;background:#fff;flex:none}
+.partner-logo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 52%}
 .case-card{border:1px solid var(--line-d);border-radius:6px;overflow:hidden;margin-top:44px}
 .case-head{background:var(--char-2);padding:30px 34px;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
 .case-head h3{font-size:26px}
@@ -313,7 +316,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <header class="phero">
 <div class="wrap">
 <span class="eyebrow">Case study · Outdoor living &amp; remodeling · Bay Area</span>
-<h1>Stonefox <span class="it">Builders.</span></h1>
+<h1 class="case-title"><span>Stonefox <span class="it">Builders.</span></span><span class="partner-logo"><img alt="Stonefox Builders logo" src="stonefox-builders-logo.png"/></span></h1>
 <p class="lede">Excellent craftsmanship, no repeatable system for winning new projects. <b>Our role: build one</b> — from Meta ads and creative to lead capture, booked consultations, and landed projects.</p>
 </div>
 </header>
@@ -476,3 +479,4 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </script>
 </body>
 </html>
+
