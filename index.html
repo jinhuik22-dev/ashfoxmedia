@@ -659,7 +659,7 @@ if(slidesBox && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     i=n%imgs.length;
     imgs[i].classList.add('on');dots[i].classList.add('on');
   };
-  const start=()=>{t=setInterval(()=>go(i+1),3000)};
+  const start=()=>{t=setInterval(()=>go(i+1),2500)};
   slidesBox.addEventListener('mouseenter',()=>clearInterval(t));
   slidesBox.addEventListener('mouseleave',start);
   start();
