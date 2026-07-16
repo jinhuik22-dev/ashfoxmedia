@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Who We Help — Bay Area Contractors · Ashfox Media</title>
+<meta content="Ashfox Media builds paid advertising, landing pages, tracking, and follow-up systems for Bay Area remodelers, deck builders, landscapers, and home-service contractors." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --char:#191B16;
+  --char-2:#23261E;
+  --stone:#EDE9DF;
+  --stone-2:#E2DDCF;
+  --ash:#A9AA9E;
+  --ink:#EDEEE6;
+  --ink-soft:#B6BAAC;
+  --ember:#C96F3B;
+  --forest:#5E7258;
+  --line-d:rgba(237,238,230,.16);
+  --line-l:rgba(237,238,230,.10);
+  --body:'Archivo',sans-serif;
+  --serif:'Instrument Serif',serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:var(--body);background:var(--char);color:var(--ink);font-size:17px;line-height:1.65}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:700;letter-spacing:-.015em;line-height:1.08}
+h2{font-size:clamp(30px,4.2vw,46px);margin-bottom:18px}
+h2 .it,h1 .it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;color:var(--ember)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:16px;color:var(--ember)}
+.light .eyebrow{color:#A2542B}
+.section{padding:100px 0}
+.light{background:var(--stone);color:var(--ink)}
+.light h2{color:var(--ink)}
+.muted{color:var(--ink-soft)}
+.light .muted{color:var(--ink-soft)}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:2px}
+.btn{display:inline-block;font-weight:600;font-size:15px;text-decoration:none;padding:14px 28px;border-radius:3px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease,color .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-ember{background:var(--ember);color:#1B1207}
+.btn-ember:hover{background:#DA8049}
+.btn-line{border-color:var(--line-d);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--ember);color:var(--ember)}
+
+.menu-toggle{display:none;background:none;border:1px solid var(--line-d);color:var(--ink);border-radius:3px;padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,27,22,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d);box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:-.01em}
+.logo small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--ink-soft);letter-spacing:.1em;text-transform:uppercase;margin-left:4px}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .btn{color:#1B1207}
+@media (max-width:640px){.nav-links a:not(.btn){display:none}}
+
+.phero{padding:110px 0 70px;border-bottom:1px solid var(--line-d)}
+.phero h1{font-size:clamp(40px,6vw,64px);max-width:18ch;margin-bottom:26px}
+.phero .lede{font-size:19px;max-width:58ch;color:var(--ink-soft)}
+.phero .lede b{color:var(--ink);font-weight:600}
+
+/* experience entries */
+.xp-item{display:grid;grid-template-columns:220px 1fr;gap:28px;border-top:1px solid var(--line-d);padding:38px 0}
+.xp-item:last-child{border-bottom:1px solid var(--line-d)}
+.xp-item .org{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.xp-item .role{font-family:var(--mono);font-size:12px;color:var(--ember);letter-spacing:.1em;text-transform:uppercase;display:block;margin-top:8px}
+.xp-item p{color:var(--ink-soft);max-width:62ch}
+.xp-item ul{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.xp-item li{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line-d);border-radius:99px;padding:5px 12px;color:var(--ink-soft)}
+@media (max-width:760px){.xp-item{grid-template-columns:1fr;gap:12px}}
+
+/* background band */
+.bg-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media (max-width:820px){.bg-grid{grid-template-columns:1fr}}
+.bg-list{list-style:none;display:grid;gap:20px}
+.bg-list li{border-top:3px solid var(--forest);padding-top:16px;font-size:15.5px;color:var(--ink-soft)}
+.bg-list li:first-child{border-top:none;padding-top:0}
+.bg-list b{color:var(--ink);font-weight:600;display:block;margin-bottom:4px;font-size:17px}
+
+.cta{background:var(--char-2);border-top:1px solid var(--line-d)}
+.cta .inner{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.cta p{color:var(--ink-soft);max-width:50ch}
+
+footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ember)}
+
+/* ── Consultation kit: top phone bar + floating CTA ────────────── */
+.topbar{background:var(--char-2);border-bottom:1px solid var(--line-d)}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px;padding-top:7px;padding-bottom:7px}
+.topbar-note{font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.05em}
+.topbar-tel{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ember);text-decoration:none;letter-spacing:.04em;white-space:nowrap}
+.topbar-tel svg{width:13px;height:13px;flex:none}
+.topbar-tel:hover{text-decoration:underline;text-underline-offset:3px}
+.consult-fab{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;gap:10px;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s}
+.consult-fab.show{opacity:1;visibility:visible;transform:none}
+.fab-call{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--ink);text-decoration:none;background:rgba(25,27,22,.92);border:1px solid var(--line-d);border-radius:99px;padding:12px 18px;backdrop-filter:blur(8px)}
+.fab-call svg{width:13px;height:13px;color:var(--ember);flex:none}
+.fab-call:hover{border-color:var(--ember);color:var(--ember)}
+.fab-word{display:none}
+.fab-book{position:relative;display:inline-block;background:var(--ember);color:#1B1207;font-weight:600;font-size:15px;text-decoration:none;padding:14px 26px;border-radius:99px;box-shadow:0 14px 34px rgba(0,0,0,.4);transition:background .15s ease}
+.fab-book:hover{background:#DA8049}
+.fab-book::before{content:"";position:absolute;inset:-5px;border-radius:99px;border:2px solid var(--ember);opacity:0;animation:fabPulse 3.2s ease-out 1.2s infinite;pointer-events:none}
+.fab-book:hover::before{animation-play-state:paused}
+@keyframes fabPulse{0%{opacity:.5;transform:scale(.94)}60%{opacity:0;transform:scale(1.15)}100%{opacity:0;transform:scale(1.15)}}
+.tel-inline{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--ink-soft);text-decoration:none;margin-top:14px}
+.tel-inline b{color:var(--ember);font-weight:500}
+.tel-inline:hover b{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:680px){
+  .topbar-note{display:none}
+  .topbar-in{justify-content:center}
+  body{padding-bottom:70px}
+  .consult-fab{left:0;right:0;bottom:0;transform:translateY(100%);gap:10px;background:rgba(25,27,22,.96);border-top:1px solid var(--line-d);backdrop-filter:blur(10px);padding:10px 14px;display:grid;grid-template-columns:auto 1fr}
+  .consult-fab.show{transform:none}
+  .fab-num{display:none}
+  .fab-word{display:inline}
+  .fab-call,.fab-book{border-radius:3px;text-align:center;justify-content:center}
+  .fab-book{padding:13px 16px;font-size:14.5px;box-shadow:none}
+  .fab-book::before{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .consult-fab{transition:none}
+  .fab-book::before{animation:none}
+}
+
+/* Restored animated dropdown navigation */
+.has-drop{position:relative}
+.has-drop>a{display:inline-flex;align-items:center;gap:7px}
+.has-drop>a .car{width:11px;height:11px;flex:none;transition:transform .18s ease,color .18s ease;color:var(--ink-soft)}
+.has-drop:hover>a .car,.has-drop:focus-within>a .car{transform:rotate(180deg);color:var(--ember)}
+.dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);min-width:280px;background:var(--char-2);border:1px solid var(--line-d);border-radius:6px;padding:10px;list-style:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:70;box-shadow:0 18px 40px rgba(0,0,0,.15)}
+.dropdown::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+@media (min-width:681px){.has-drop:hover .dropdown,.has-drop:focus-within .dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}}
+.dropdown li{margin:0}
+.dropdown a{display:block;padding:12px 14px;border-radius:4px;text-decoration:none}
+.dropdown a b{display:block;font-size:14.5px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.dropdown a small{display:block;font-size:12.5px;line-height:1.45;color:var(--ink-soft);margin-top:3px;font-weight:400}
+.dropdown a:hover{background:rgba(201,111,59,.12)}
+.dropdown a:hover b{color:var(--ember)}
+.dropdown .all{border-top:1px solid var(--line-d);margin-top:6px;padding-top:6px}
+.dropdown .all a b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
+.svc-menu{width:700px;min-width:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:14px}
+.svc-menu a{display:flex;flex-direction:column;gap:10px;height:100%;padding:16px 14px}
+.svc-menu .all{grid-column:1/-1}
+.svc-menu .all a{flex-direction:row;padding:12px 14px}
+.d-ic{flex:none;width:32px;height:32px;border:1px solid var(--line-d);border-radius:5px;display:flex;align-items:center;justify-content:center;color:var(--ember);transition:border-color .15s ease,transform .15s ease}
+.d-ic svg{width:16px;height:16px}
+.svc-menu a:hover .d-ic{border-color:var(--ember);transform:translateY(-1px)}
+.who-menu{width:520px;grid-template-columns:repeat(2,1fr)}
+@media (max-width:920px){
+  .dropdown{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;border:0;background:transparent;padding:0 0 0 14px;min-width:0;box-shadow:none}
+  .dropdown a small{display:none}
+  .d-ic{display:none}
+  .svc-menu,.who-menu{display:block;width:auto;padding:0 0 0 14px}
+  .svc-menu a{display:block;padding:12px 14px}
+  .has-drop>a .car{display:none}
+}
+
+
+
+/* Mobile experience refinement — 2026-07 */
+html,body{max-width:100%}
+img,svg,video{max-width:100%}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+
+@media (max-width:680px){
+  :root{scroll-padding-top:84px}
+  .wrap{width:min(100% - 32px,1120px)}
+  .topbar-in{min-height:36px;padding-top:6px;padding-bottom:6px}
+  .topbar-tel{font-size:12px}
+  .navbar{height:64px;position:relative}
+  .nav-links>li>a{display:flex!important}
+  .logo{font-size:16px;min-width:0}
+  .logo img{width:30px}
+  .logo small{display:none}
+  .menu-toggle{display:block;min-width:48px;min-height:44px;padding:10px 13px;position:relative;z-index:101}
+
+  
+  
+  .nav-links{
+    display:flex;position:absolute;top:64px;left:0;right:0;
+    max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+    background:rgba(25,27,22,.985);border-bottom:1px solid var(--line-d);
+    flex-direction:column;align-items:stretch;padding:0 20px;gap:0;
+    transition:max-height .28s ease,opacity .2s ease,padding .28s ease,visibility .28s;
+    box-shadow:0 18px 30px rgba(0,0,0,.12)
+  }
+  .nav-links.open{
+    max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;
+    opacity:1;visibility:visible;padding:14px 20px calc(22px + env(safe-area-inset-bottom));
+  }
+  .nav-links>li{width:100%;border-bottom:1px solid var(--line-d)}
+  .nav-links>li:last-child{border-bottom:0;padding-top:14px}
+  .nav-links>li>a{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:50px;padding:12px 2px;font-size:16px;color:var(--ink)}
+  .nav-links>li>a.btn{justify-content:center;min-height:48px;padding:13px 16px}
+  .has-drop>a .car{display:block;transition:transform .2s ease}
+  .has-drop.mobile-open>a .car{transform:rotate(180deg);color:var(--ember)}
+  .dropdown,.svc-menu,.who-menu{
+    display:grid!important;grid-template-columns:1fr!important;position:static;width:auto;min-width:0;max-height:0;overflow:hidden;
+    opacity:0;visibility:hidden;pointer-events:none;transform:none;
+    border:0;background:transparent;box-shadow:none;padding:0;margin:0;
+    transition:max-height .28s ease,opacity .2s ease,visibility .28s
+  }
+  .has-drop.mobile-open>.dropdown{
+    max-height:620px;opacity:1;visibility:visible;pointer-events:auto;padding:0 0 12px
+  }
+  .dropdown li,.svc-menu li,.who-menu li{border:0}
+  .dropdown a,.svc-menu a,.who-menu a{display:block;min-height:46px;padding:11px 12px;border-radius:4px;background:rgba(34,37,31,.05)}
+  .dropdown li+li a{margin-top:5px}
+  .dropdown a b{font-size:14px}
+  .dropdown a small{display:block;font-size:12px;line-height:1.4;margin-top:3px}
+  .d-ic{display:none}
+  .dropdown .all{margin-top:7px;padding-top:7px}
+
+  .hero{padding:58px 0 48px}
+  .hero h1{font-size:clamp(38px,11.5vw,54px);line-height:.98;margin-bottom:22px}
+  .hero .lede{font-size:17px;line-height:1.62;margin-bottom:10px}
+  .hero-ctas{display:grid;grid-template-columns:1fr;gap:10px;margin-top:28px}
+  .hero-ctas .btn{width:100%;text-align:center;min-height:50px;padding:14px 18px}
+  .hero-loc{line-height:1.55;margin-top:18px}
+  .eyebrow{line-height:1.5}
+
+  .section{padding:58px 0}
+  h2{font-size:clamp(31px,9vw,43px)}
+  .sysline{margin-top:44px;padding-bottom:12px;scrollbar-width:thin;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .sysline svg{min-width:650px}
+  .sysline:after{content:'Swipe to view the full process →';display:block;font-family:var(--mono);font-size:10px;color:var(--ink-soft);letter-spacing:.06em;margin-top:8px}
+
+  .btn{min-height:48px;padding:13px 20px;text-align:center}
+  input,select,textarea{font-size:16px!important;min-height:48px}
+  textarea{min-height:110px}
+  form .btn[type=submit]{width:100%;min-height:52px}
+  .form-note{line-height:1.5}
+
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .consult-fab{padding:10px 12px calc(10px + env(safe-area-inset-bottom));grid-template-columns:48px minmax(0,1fr)}
+  .fab-call{width:48px;height:48px;padding:0;overflow:hidden;gap:0;border-radius:6px}
+  .fab-call svg{width:18px;height:18px;margin:0}
+  .fab-call .fab-word{display:none}
+  .fab-book{min-width:0;min-height:48px;padding:12px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:6px;font-size:14px}
+
+  .foot{flex-direction:column;align-items:flex-start;gap:12px;line-height:1.7}
+}
+
+@media (max-width:380px){
+  .wrap{width:min(100% - 24px,1120px)}
+  .hero h1{font-size:36px}
+  .fab-book{font-size:12.5px;padding-left:8px;padding-right:8px}
+  .topbar-tel{font-size:11.5px}
+}
+.light,.exp{--ink:#22251F;--ink-soft:#4C5147;--ash:#6F7266;--line-d:rgba(34,37,31,.18);--line-l:rgba(34,37,31,.14);--char-2:#FFFFFF;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="wrap topbar-in">
+<span class="topbar-note">Bay Area contractor marketing · Month-to-month · You own every account</span>
+<a aria-label="Call Ashfox Media at (408) 634-3473" class="topbar-tel" href="tel:+14086343473"><svg aria-hidden="true" viewbox="0 0 16 16"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"></path></svg> (408) 634-3473</a>
+</div>
+</div>
+<nav>
+<div class="wrap navbar">
+<a class="logo" href="index.html">Ashfox Media <small>· Who We Help</small></a>
+<button aria-controls="nav-links" aria-expanded="false" class="menu-toggle" onclick="toggleMenu(this)">MENU</button>
+<ul class="nav-links" id="nav-links">
+<li class="has-drop"><a aria-haspopup="true" href="index.html#services">Services <svg aria-hidden="true" class="car" fill="none" viewbox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path></svg></a>
+<ul class="dropdown svc-menu">
+<li><a href="pricing.html#website"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><rect height="9" rx="1.5" width="13" x="1.5" y="2.5"></rect><path d="M5.5 14h5M8 11.5V14"></path></svg></span><span><b>Websites</b><small>Mobile-first sites and landing pages built to turn visitors into qualified inquiries.</small></span></a></li>
+<li><a href="pricing.html#paid-ads"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M1.5 11.5l4-4 2.5 2.5 5-5.5"></path><path d="M9.5 4.5H13V8"></path></svg></span><span><b>Paid Ads</b><small>Google and Meta campaigns connected to tracking, lead capture, and follow-up.</small></span></a></li>
+<li><a href="pricing.html#media-production"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M2 5h2.2l1-1.5h5.6l1 1.5H14v8H2z"></path><circle cx="8" cy="9" r="2.4"></circle></svg></span><span><b>Media Production</b><small>Drone, photo, video, and creative assets for contractor campaigns and websites.</small></span></a></li>
+<li class="all"><a href="pricing.html"><b>View services &amp; pricing →</b></a></li>
+</ul></li>
+<li class="has-drop"><a aria-haspopup="true" href="smbs.html">Who We Help <svg aria-hidden="true" class="car" fill="none" viewbox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path></svg></a>
+<ul class="dropdown svc-menu who-menu">
+<li><a href="stonefox.html"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M2 8l6-5.5L14 8"></path><path d="M3.5 7v6.5h9V7"></path></svg></span><span><b>Stonefox Builders</b><small>See how campaigns, lead capture, follow-up, and consultation tracking became one process.</small></span></a></li>
+<li><a href="smbs.html"><span class="d-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 16 16"><path d="M2 6l1-3h10l1 3"></path><path d="M2.5 6v7.5h11V6"></path><path d="M6 13.5V9.5h4v4"></path></svg></span><span><b>Bay Area Contractors</b><small>Remodelers, deck builders, outdoor-living companies, and selected home-service trades.</small></span></a></li>
+</ul></li>
+
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="about.html">About</a></li>
+<li><a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a></li>
+</ul>
+</div>
+</nav>
+<header class="phero">
+<div class="wrap">
+<span class="eyebrow">Who we help</span>
+<h1>Built for Bay Area <span class="it">contractors.</span></h1>
+<p class="lede">Contracting businesses that win work through trust, proof, and fast follow-up. <b>We connect the ads, landing pages, tracking, and lead process</b> that turn homeowner demand into qualified estimates.</p>
+</div>
+</header>
+<section class="section" style="padding-top:70px">
+<div class="wrap">
+<span class="eyebrow">Contractors we work with</span>
+<h2>One lead system. <span class="it">Built around your trade.</span></h2>
+<div class="xp-item">
+<div><span class="org">Remodelers &amp; general contractors</span><span class="role">High-ticket projects</span></div>
+<div>
+<p>Homeowners compare trust, finished work, and responsiveness before they invite anyone into the home. We turn project proof into campaigns and guide qualified inquiries toward an estimate.</p>
+<ul><li>meta &amp; google ads</li><li>landing pages</li><li>estimate booking</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div><span class="org">Deck &amp; outdoor living contractors</span><span class="role">Where we started</span></div>
+<div>
+<p>Visual projects need visual marketing. We turn completed decks, patios, and outdoor spaces into local campaigns, then connect every inquiry to a clear follow-up process. See it in practice: <a href="stonefox.html" style="color:var(--ember)">the Stonefox Builders case study</a>.</p>
+<ul><li>project creative</li><li>local campaigns</li><li>lead tracking</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div><span class="org">Landscapers &amp; hardscapers</span><span class="role">Seasonal demand</span></div>
+<div>
+<p>Demand changes with the season, but the pipeline should not disappear with it. We build campaigns and follow-up around the months homeowners plan, compare, and commit.</p>
+<ul><li>seasonal campaigns</li><li>service-area pages</li><li>quote follow-up</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div><span class="org">Plumbing, HVAC &amp; electrical</span><span class="role">Speed wins</span></div>
+<div>
+<p>When the need is urgent, the first credible company to respond has the advantage. We reduce friction with fast mobile pages, clear calls to action, call tracking, and prompt lead routing.</p>
+<ul><li>google search ads</li><li>call tracking</li><li>fast lead routing</li></ul>
+</div>
+</div>
+<div class="xp-item">
+<div><span class="org">Roofing &amp; other home services</span><span class="role">Local trust</span></div>
+<div>
+<p>Strong local proof and clear service-area coverage help homeowners choose confidently. We connect that credibility to paid demand and measurable inquiries.</p>
+<ul><li>local proof</li><li>service-area targeting</li><li>retargeting</li></ul>
+</div>
+</div>
+</div>
+</section>
+<section class="section light">
+<div class="wrap bg-grid">
+<div>
+<span class="eyebrow">Every engagement</span>
+<h2>What every contractor <span class="it">gets.</span></h2>
+<p style="color:var(--ink-soft);max-width:52ch">The trade may differ, but the system stays accountable: diagnose first, build second, and track what becomes an estimate.</p>
+</div>
+<ul class="bg-list">
+<li><b>Audit before anything</b>We map your website, ads, and lead flow to find where inquiries are lost.</li>
+<li><b>Plain-English plan</b>What to fix, in what order, and why — no jargon, no padding.</li>
+<li><b>You own everything</b>Every account, page, and system we build is yours. No lock-in retainers.</li>
+</ul>
+</div>
+</section>
+<section class="section cta" id="consult">
+<div class="wrap inner">
+<div>
+<span class="eyebrow">Next step</span>
+<h2 style="margin-bottom:10px">Find the gaps in your <span class="it">lead flow.</span></h2>
+<p>We'll review your contractor website, advertising, tracking, and follow-up before the call and show you what to fix first.</p>
+</div>
+<div style="display:grid;justify-items:start">
+<a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a>
+<a class="tel-inline" href="tel:+14086343473">Or call <b>(408) 634-3473</b></a>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap foot">
+<div>© 2026 Ashfox Media</div>
+<div><a href="index.html">ashfoxmedia.com</a> · <a href="stonefox.html">Case study</a> · <a href="smbs.html">Who we help</a> · <a href="pricing.html">Pricing</a></div>
+</div>
+</footer>
+<div class="consult-fab" id="consult-fab">
+<a aria-label="Call (408) 634-3473" class="fab-call" href="tel:+14086343473"><svg aria-hidden="true" viewbox="0 0 16 16"><path d="M14.6 11.4c-.9-.1-1.8-.4-2.6-.8-.4-.2-.9-.1-1.2.2l-1 1c-1.8-1-3.2-2.4-4.2-4.2l1-1c.3-.3.4-.8.2-1.2-.4-.8-.7-1.7-.8-2.6C6 2.3 5.6 2 5.1 2H3c-.6 0-1 .4-1 1 0 6.1 4.9 11 11 11 .6 0 1-.4 1-1v-2.1c0-.5-.3-.9-.8-1z" fill="currentColor"></path></svg><span class="fab-num">(408) 634-3473</span><span class="fab-word">Call</span></a>
+<a class="fab-book" href="index.html#contact">Free Strategy Call</a>
+</div>
+<script>
+(function(){
+  var fab=document.getElementById('consult-fab');
+  if(!fab)return;
+  var target=document.getElementById('contact')||document.getElementById('consult');
+  var targetVisible=false;
+  function update(){
+    fab.classList.toggle('show',window.scrollY>280&&!targetVisible);
+  }
+  if(target&&'IntersectionObserver'in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){targetVisible=e.isIntersecting;});update();
+    },{threshold:.15}).observe(target);
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
+
+<script>
+(function(){
+  const mobileQuery=window.matchMedia('(max-width: 680px)');
+  const nav=document.getElementById('nav-links');
+  const toggle=document.querySelector('.menu-toggle');
+  if(!nav||!toggle) return;
+
+  function closeDropdowns(){
+    nav.querySelectorAll('.has-drop.mobile-open').forEach(item=>{
+      item.classList.remove('mobile-open');
+      const trigger=item.querySelector(':scope > a');
+      if(trigger) trigger.setAttribute('aria-expanded','false');
+    });
+  }
+  function closeMenu(){
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    document.body.classList.remove('menu-open');
+    closeDropdowns();
+  }
+
+  // Replace the inline menu behavior with body scroll locking and reliable state.
+  window.toggleMenu=function(btn){
+    const open=!nav.classList.contains('open');
+    nav.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',String(open));
+    document.body.classList.toggle('menu-open',open && mobileQuery.matches);
+    if(!open) closeDropdowns();
+  };
+
+  nav.querySelectorAll('.has-drop').forEach(item=>{
+    const trigger=item.querySelector(':scope > a');
+    if(!trigger) return;
+    trigger.setAttribute('aria-expanded','false');
+    trigger.addEventListener('click',function(e){
+      if(!mobileQuery.matches) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const willOpen=!item.classList.contains('mobile-open');
+      nav.querySelectorAll('.has-drop.mobile-open').forEach(other=>{
+        if(other!==item){
+          other.classList.remove('mobile-open');
+          const t=other.querySelector(':scope > a');
+          if(t) t.setAttribute('aria-expanded','false');
+        }
+      });
+      item.classList.toggle('mobile-open',willOpen);
+      trigger.setAttribute('aria-expanded',String(willOpen));
+    });
+  });
+
+  nav.querySelectorAll('a').forEach(a=>{
+    if(a.closest('.has-drop') && a===a.closest('.has-drop').querySelector(':scope > a')) return;
+    a.addEventListener('click',()=>{ if(mobileQuery.matches) closeMenu(); });
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
+  document.addEventListener('pointerdown',e=>{ if(nav.classList.contains('open') && !e.target.closest('nav')) closeMenu(); });
+  mobileQuery.addEventListener?.('change',()=>{closeMenu();});
+})();
+</script>
+</body>
+</html>
