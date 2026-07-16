@@ -102,14 +102,21 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 /* Hero */
 .hero{padding:110px 0 80px;border-bottom:1px solid var(--line-d)}
 .hero .wrap{position:relative}
-.growth{position:absolute;right:0;top:36px;width:min(360px,32vw);pointer-events:none}
-.growth .area{fill:url(#growthFill)}
-.growth .line{stroke:var(--ember);stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 2.2s ease-out .4s forwards}
-.growth .dot{fill:var(--ember);animation:pulse 2.4s ease-in-out 2.6s infinite;opacity:0;animation-fill-mode:forwards}
-.growth .glabel{font-family:var(--mono);font-size:11px;fill:var(--ink-soft);letter-spacing:.1em}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes pulse{0%{opacity:1;r:4}50%{opacity:1;r:6}100%{opacity:1;r:4}}
-@media (max-width:920px){.growth{display:none}}
+.orbit{position:absolute;right:24px;top:60px;width:min(340px,30vw);aspect-ratio:1;pointer-events:none}
+.orbit-ring{position:absolute;inset:0;border:1.5px dashed rgba(201,111,59,.38);border-radius:50%;animation:orbitSpin 60s linear infinite}
+.orbit-hub{position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:var(--ember);color:#1B1207;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(201,111,59,.12),0 0 44px rgba(201,111,59,.35);animation:hubPulse 3.2s ease-in-out infinite}
+.orbit-hub svg{width:34px;height:34px}
+.orbiter{position:absolute;left:50%;top:50%;width:0;height:0;animation:orbitSpin 20s linear infinite}
+.orbiter.o2{animation-delay:-6.667s}
+.orbiter.o3{animation-delay:-13.333s}
+.orbit-icon{position:absolute;left:0;top:0;width:58px;height:58px;margin:-29px 0 0 -29px;transform:translateY(calc(min(340px,30vw)/-2));display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--char-2);border:1px solid var(--line-d);color:var(--ember);box-shadow:0 10px 28px rgba(0,0,0,.45)}
+.orbit-icon svg{width:28px;height:28px;animation:orbitSpinRev 20s linear infinite}
+.orbiter.o2 .orbit-icon svg{animation-delay:-6.667s}
+.orbiter.o3 .orbit-icon svg{animation-delay:-13.333s}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+@keyframes orbitSpinRev{to{transform:rotate(-360deg)}}
+@keyframes hubPulse{0%,100%{box-shadow:0 0 0 10px rgba(201,111,59,.12),0 0 44px rgba(201,111,59,.35)}50%{box-shadow:0 0 0 16px rgba(201,111,59,.07),0 0 60px rgba(201,111,59,.5)}}
+@media (max-width:920px){.orbit{display:none}}
 .hero h1{font-size:clamp(40px,6vw,72px);max-width:16ch;margin-bottom:26px}
 .hero .lede{font-size:19px;max-width:56ch;color:var(--ink-soft);margin-bottom:14px}
 .hero .lede b{color:var(--ink);font-weight:600}
@@ -226,8 +233,9 @@ footer a:hover{color:var(--ember)}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .sysline .flow{animation:none}
-  .growth .line{animation:none;stroke-dashoffset:0}
-  .growth .dot{animation:none;opacity:1}
+  .orbit-ring,.orbiter,.orbit-icon svg,.orbit-hub{animation:none}
+  .orbiter.o1{transform:rotate(0deg)}.orbiter.o2{transform:rotate(120deg)}.orbiter.o3{transform:rotate(240deg)}
+  .orbiter.o2 .orbit-icon svg{transform:rotate(-120deg)}.orbiter.o3 .orbit-icon svg{transform:rotate(-240deg)}
   .btn{transition:none}
 }
 
@@ -451,26 +459,21 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </nav>
 <header class="hero" id="top">
 <div class="wrap">
-<svg aria-hidden="true" class="growth" viewbox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<lineargradient id="growthFill" x1="0" x2="0" y1="0" y2="1">
-<stop offset="0%" stop-color="#C96F3B" stop-opacity=".22"></stop>
-<stop offset="100%" stop-color="#C96F3B" stop-opacity="0"></stop>
-</lineargradient>
-</defs>
-<path class="area" d="M8 252 L52 232 L84 218 L128 196 L158 180 L198 150 L226 130 L262 96 L288 72 L320 34 L320 268 L8 268 Z"></path>
-<path class="line" d="M8 252 L52 232 L84 218 L128 196 L158 180 L198 150 L226 130 L262 96 L288 72 L320 34"></path>
-<circle class="dot" cx="320" cy="34" r="4"></circle>
-<text class="glabel" x="212" y="24">GROWTH ↗</text>
-</svg>
-<span class="eyebrow">Lead generation systems for Bay Area contractors</span>
+<div aria-hidden="true" class="orbit">
+<div class="orbit-ring"></div>
+<div class="orbit-hub"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M4 18L10 12L14 15L20 7"/><path d="M14 7h6v6"/></svg></div>
+<div class="orbiter o1"><span class="orbit-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.6v2.8M12 18.6v2.8M2.6 12h2.8M18.6 12h2.8M5.4 5.4l2 2M16.6 16.6l2 2M18.6 5.4l-2 2M7.4 16.6l-2 2"/></svg></span></div>
+<div class="orbiter o2"><span class="orbit-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><rect height="12" rx="2" width="12" x="6" y="6"/><path d="M9 6V3.5M15 6V3.5M9 20.5V18M15 20.5V18M6 9H3.5M6 15H3.5M20.5 9H18M20.5 15H18"/><text fill="currentColor" font-family="inherit" font-size="7" font-weight="700" stroke="none" text-anchor="middle" x="12" y="14.6">AI</text></svg></span></div>
+<div class="orbiter o3"><span class="orbit-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M3.5 11.5L12 4l8.5 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></span></div>
+</div>
+<span class="eyebrow" style="font-size:17px;letter-spacing:.16em">Lead generation systems for Bay Area contractors</span>
 <h1>Turn ad spend into <span class="it">qualified estimates.</span></h1>
 <p class="lede">Ashfox builds <b>Google and Meta ad campaigns, landing pages, tracking, and follow-up systems</b> for remodelers and home-service contractors across the Bay Area.</p>
 <div class="hero-ctas">
 <a class="btn btn-ember" href="#contact">Book a Free Strategy Call</a>
 <a class="btn btn-line" href="stonefox.html">View Stonefox Case Study</a>
 </div>
-<p class="hero-loc">// Based in Silicon Valley · Serving the Bay Area &amp; Northern California</p>
+<p class="hero-loc">Based in Silicon Valley · Serving the Bay Area &amp; Northern California</p>
 <div aria-label="Diagram: ads and website flow into a lead system that produces booked work" class="sysline">
 <svg role="img" viewbox="0 0 780 120" xmlns="http://www.w3.org/2000/svg">
 <rect height="52" rx="4" width="150" x="5" y="34"></rect>
@@ -494,7 +497,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <span class="eyebrow">Featured case study</span>
 <h2>Stonefox <span class="it">Builders.</span></h2>
 <p class="muted" style="max-width:52ch">A Bay Area outdoor living and remodeling contractor with excellent craftsmanship — and no repeatable system for winning projects. We connected Meta campaigns, lead capture, follow-up, and consultation tracking into one repeatable process.</p>
-<p class="ai-note">// <b>Technology-enabled delivery.</b> We use automation and modern tools to move faster, report clearly, and keep overhead lower than a traditional agency.</p>
+<p class="ai-note"><b>Technology-enabled delivery.</b> We use automation and modern tools to move faster, report clearly, and keep overhead lower than a traditional agency.</p>
 <a class="btn btn-line" href="stonefox.html">Read the full case study →</a>
 </div>
 <figure class="reveal">
@@ -548,7 +551,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </div>
 <div class="reveal" style="margin-top:48px;display:grid;justify-items:start">
 <a class="btn btn-ember" href="#contact">Book a Free Strategy Call</a>
-<a class="tel-inline" href="tel:+14086343473">// book a free strategy call — or call <b>(408) 634-3473</b></a>
+<a class="tel-inline" href="tel:+14086343473">book a free strategy call — or call <b>(408) 634-3473</b></a>
 </div>
 </div>
 </section>
@@ -583,7 +586,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h4>What we’ll cover on the call</h4>
 <p>Your website, current advertising, lead tracking, follow-up process, and the practical next steps most likely to improve qualified estimates. No obligation.</p>
 </div>
-<a class="tel-inline" href="tel:+14086343473">// prefer to talk? Call <b>(408) 634-3473</b></a>
+<a class="tel-inline" href="tel:+14086343473">prefer to talk? Call <b>(408) 634-3473</b></a>
 </div>
 <form action="https://formspree.io/f/xvzeonbj" class="reveal" id="consult-form" method="POST">
 <input name="_subject" type="hidden" value="New strategy call request — ashfoxmedia.com"/>
@@ -616,7 +619,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <div><label for="f-msg">Anything else I should know?</label><textarea id="f-msg" name="message" placeholder="Optional — context helps me prepare." rows="3"></textarea></div>
 <button class="btn btn-ember" type="submit">Book my free strategy call</button>
 <p class="form-note">We’ll only use your information to respond to your request. No spam or mailing lists.</p>
-<p class="form-note" id="form-status">// You'll get a personal reply, usually within one business day.</p>
+<p class="form-note" id="form-status">You'll get a personal reply, usually within one business day.</p>
 </form>
 </div>
 </section>
@@ -660,11 +663,11 @@ form.addEventListener('submit',async e=>{
       form.innerHTML='<div class="form-success"><h3>Request received ✓</h3><p>Thanks — we\'ll review your info, and you\'ll get a personal reply within one business day.</p></div>';
     }else{
       btn.disabled=false;btn.textContent='Book my free strategy call';
-      status.textContent='// Something went wrong — please try again, or email me directly.';
+      status.textContent='Something went wrong — please try again, or email me directly.';
     }
   }catch(err){
     btn.disabled=false;btn.textContent='Book my free strategy call';
-    status.textContent='// Network error — please try again, or email me directly.';
+    status.textContent='Network error — please try again, or email me directly.';
   }
 });
 </script>
