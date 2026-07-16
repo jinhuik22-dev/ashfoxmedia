@@ -62,9 +62,13 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 @media (max-width:640px){.nav-links a:not(.btn){display:none}}
 
 .phero{padding:110px 0 70px;border-bottom:1px solid var(--line-d)}
+.phero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,360px);gap:64px;align-items:center}
 .phero h1{font-size:clamp(40px,6vw,64px);max-width:18ch;margin-bottom:26px}
 .phero .lede{font-size:19px;max-width:58ch;color:var(--ink-soft)}
 .phero .lede b{color:var(--ink);font-weight:600}
+.phero-logo{width:100%;justify-self:end}
+.phero-logo img{display:block;width:100%;height:auto}
+@media (max-width:780px){.phero-grid{grid-template-columns:1fr;gap:36px}.phero-logo{width:min(320px,80vw);justify-self:start}}
 
 /* experience entries */
 .xp-item{display:grid;grid-template-columns:220px 1fr;gap:28px;border-top:1px solid var(--line-d);padding:38px 0}
@@ -131,9 +135,6 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
 }
 
 /* Case study */
-.case-title{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.partner-logo{display:inline-block;width:190px;aspect-ratio:2/1;overflow:hidden;border-radius:4px;background:#fff;flex:none}
-.partner-logo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 52%}
 .case-card{border:1px solid var(--line-d);border-radius:6px;overflow:hidden;margin-top:44px}
 .case-head{background:var(--char-2);padding:30px 34px;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
 .case-head h3{font-size:26px}
@@ -314,10 +315,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </div>
 </nav>
 <header class="phero">
-<div class="wrap">
+<div class="wrap phero-grid">
+<div>
 <span class="eyebrow">Case study · Outdoor living &amp; remodeling · Bay Area</span>
-<h1 class="case-title"><span>Stonefox <span class="it">Builders.</span></span><span class="partner-logo"><img alt="Stonefox Builders logo" src="stonefox-builders-logo.png"/></span></h1>
+<h1>Stonefox <span class="it">Builders.</span></h1>
 <p class="lede">Excellent craftsmanship, no repeatable system for winning new projects. <b>Our role: build one</b> — from Meta ads and creative to lead capture, booked consultations, and landed projects.</p>
+</div>
+<div class="phero-logo"><img alt="Stonefox Builders logo" src="stonefox-builders-logo-transparent.png"/></div>
 </div>
 </header>
 <section class="section" style="padding-top:70px">
