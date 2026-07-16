@@ -87,7 +87,7 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 .phero h1{font-size:clamp(40px,6vw,64px);max-width:16ch;margin-bottom:26px}
 .phero .lede{font-size:19px;max-width:56ch;color:var(--ink-soft)}
 .phero .lede b{color:var(--ink);font-weight:600}
-.phero-note{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);margin-top:22px;letter-spacing:.06em}
+.phero-note{font-size:15.5px;color:var(--ink-soft);margin-top:22px}
 .phero-note b{color:var(--ink);font-weight:500}
 
 /* ============ pill toggle tabs ============ */
@@ -128,7 +128,7 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 .price{font-family:var(--mono);margin:22px 0 4px;display:flex;align-items:baseline;gap:8px}
 .price .amt{font-size:34px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
 .price .per{font-size:13px;color:var(--ink-soft)}
-.price-note{font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.04em;min-height:1.5em}
+.price-note{font-size:14px;color:var(--ink-soft);min-height:1.5em}
 .card ul{list-style:none;margin:22px 0 26px;display:grid;gap:10px;flex:1}
 .card li{padding-left:22px;position:relative;font-size:15.5px;color:var(--ink-soft)}
 .card li::before{content:"→";position:absolute;left:0;color:var(--ember);font-family:var(--mono);font-size:14px}
@@ -141,7 +141,7 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 .addon .a-desc{color:var(--ink-soft);font-size:14.5px;margin-top:2px;max-width:60ch}
 .addon .a-price{font-family:var(--mono);font-size:20px;color:var(--ink);white-space:nowrap}
 .addon .a-price span{font-size:12px;color:var(--ink-soft)}
-.fineprint{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:24px;line-height:1.8;letter-spacing:.03em}
+.fineprint{font-size:14px;color:var(--ink-soft);margin-top:24px;line-height:1.7;max-width:70ch}
 
 /* ============ production ============ */
 .prod{display:grid;grid-template-columns:1.15fr .85fr;gap:1px;background:var(--line-d);border:1px solid var(--line-d);border-radius:6px;overflow:hidden}
@@ -161,6 +161,7 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 @media (max-width:820px){.own-grid{grid-template-columns:1fr}}
 .own-list{list-style:none;display:grid;gap:20px}
 .own-list li{border-top:3px solid var(--forest);padding-top:16px;font-size:15.5px;color:var(--ink-soft)}
+.own-list li:first-child{border-top:none;padding-top:0}
 .own-list b{color:var(--ink);font-weight:600;display:block;margin-bottom:4px;font-size:17px}
 
 /* ============ FAQ ============ */
@@ -170,7 +171,7 @@ nav{position:sticky;top:0;z-index:60;transform:translateZ(0);background:rgba(25,
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .m{font-family:var(--mono);color:var(--ember);font-size:18px;transition:transform .2s ease;flex:none}
 .faq details[open] summary .m{transform:rotate(45deg)}
-.faq details p{padding:0 4px 24px;color:var(--ink-soft);max-width:68ch;font-size:15.5px}
+.faq details p{padding:0 4px 24px;color:var(--ink-soft);font-size:15.5px}
 
 /* ============ footer ============ */
 footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
@@ -196,7 +197,7 @@ footer{border-top:1px solid var(--line-d);padding:34px 0 48px}
 .fab-book::before{content:"";position:absolute;inset:-5px;border-radius:99px;border:2px solid var(--ember);opacity:0;animation:fabPulse 3.2s ease-out 1.2s infinite;pointer-events:none}
 .fab-book:hover::before{animation-play-state:paused}
 @keyframes fabPulse{0%{opacity:.5;transform:scale(.94)}60%{opacity:0;transform:scale(1.15)}100%{opacity:0;transform:scale(1.15)}}
-.tel-inline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--ink-soft);text-decoration:none;margin-top:14px;letter-spacing:.04em}
+.tel-inline{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--ink-soft);text-decoration:none;margin-top:14px}
 .tel-inline b{color:var(--ember);font-weight:500}
 .tel-inline:hover b{text-decoration:underline;text-underline-offset:3px}
 @media (max-width:680px){
@@ -383,7 +384,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <span class="eyebrow">Pricing</span>
 <h1>Simple pricing. You own <span class="it">everything.</span></h1>
 <p class="lede">Three services, flat rates, month-to-month. No percentage of your ad spend, no lock-in retainers, no ownership games. <b>Every account, page, and system we build is yours from day one.</b></p>
-<p class="phero-note">// fees never include ad spend — <b>your budget goes straight to Google &amp; Meta, under your control</b></p>
+<p class="phero-note">Fees never include ad spend — <b>your budget goes straight to Google &amp; Meta, under your control</b></p>
 </div>
 </header>
 <div class="tabsbar">
@@ -412,7 +413,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h3>Search Demand</h3>
 <p class="fit">For capturing homeowners the moment they search for your service.</p>
 <div class="price"><span class="amt">$649</span><span class="per">/mo</span></div>
-<div class="price-note">// month-to-month · no contract</div>
+<div class="price-note">Month-to-month · no contract</div>
 <ul>
 <li>High-intent local search campaigns</li>
 <li>Dedicated landing pages built to convert</li>
@@ -427,7 +428,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h3>Full Lead System</h3>
 <p class="fit">The whole pipeline: ads in, tracked inquiries out, booked estimates on your calendar.</p>
 <div class="price"><span class="amt">$1,549</span><span class="per">/mo</span></div>
-<div class="price-note">// saves $100/mo vs. separate plans</div>
+<div class="price-note">Saves $100/mo vs. separate plans</div>
 <ul>
 <li>Meta + Google campaigns, coordinated</li>
 <li>Capture &amp; follow-up flow: <b>inquiry → booked estimate</b></li>
@@ -441,7 +442,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h3>Local Brand &amp; Retargeting</h3>
 <p class="fit">For staying in front of your neighborhood with finished-project creative.</p>
 <div class="price"><span class="amt">$1,000</span><span class="per">/mo</span></div>
-<div class="price-note">// month-to-month · no contract</div>
+<div class="price-note">Month-to-month · no contract</div>
 <ul>
 <li>Hyper-local neighborhood targeting</li>
 <li>Ad creative built from <b>your finished projects</b></li>
@@ -458,7 +459,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </div>
 <div class="a-price">$199 <span>/mo</span></div>
 </div>
-<p class="fineprint">// management fees only — ad budgets are paid directly to Google and Meta and stay under your control.<br/>// cancel any month; your ad accounts, pixels, and data remain yours.</p>
+<p class="fineprint">Management fees only — ad budgets are paid directly to Google and Meta and stay under your control. Cancel any month; your ad accounts, pixels, and data remain yours.</p>
 </div>
 </section>
 <!-- ============ 02 · WEBSITES ============ -->
@@ -481,7 +482,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h3>Foundation</h3>
 <p class="fit">Get online fast on a proven, conversion-focused layout.</p>
 <div class="price"><span class="amt" data-once="$2,500" data-split="$834">$2,500</span><span class="per" data-once="one-time" data-split="× 3 mo">one-time</span></div>
-<div class="price-note" data-once="// yours at launch" data-split="// ownership still transfers at launch">// yours at launch</div>
+<div class="price-note" data-once="Yours at launch" data-split="Ownership still transfers at launch">Yours at launch</div>
 <ul>
 <li>Mobile-first build on a battle-tested layout</li>
 <li>Conversion structure: clear calls, easy contact</li>
@@ -496,7 +497,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h3>Custom</h3>
 <p class="fit">A fully custom site tuned to win comparison-shopping homeowners.</p>
 <div class="price"><span class="amt" data-once="$6,450" data-split="$2,150">$6,450</span><span class="per" data-once="one-time" data-split="× 3 mo">one-time</span></div>
-<div class="price-note" data-once="// yours at launch" data-split="// ownership still transfers at launch">// yours at launch</div>
+<div class="price-note" data-once="Yours at launch" data-split="Ownership still transfers at launch">Yours at launch</div>
 <ul>
 <li>100% custom design around your work &amp; brand</li>
 <li>Multi-step estimate request flow</li>
@@ -510,7 +511,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 <h3>Custom Pro</h3>
 <p class="fit">For established businesses ready to automate the whole front office.</p>
 <div class="price"><span class="amt" data-once="$9,450" data-split="$3,150">$9,450</span><span class="per" data-once="one-time" data-split="× 3 mo">one-time</span></div>
-<div class="price-note" data-once="// yours at launch" data-split="// ownership still transfers at launch">// yours at launch</div>
+<div class="price-note" data-once="Yours at launch" data-split="Ownership still transfers at launch">Yours at launch</div>
 <ul>
 <li>Everything in Custom, plus:</li>
 <li>CRM integration &amp; call tracking</li>
@@ -527,7 +528,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </div>
 <div class="a-price">$179 <span>/mo</span></div>
 </div>
-<p class="fineprint">// pick 3 payments and the site is still yours at launch — not after the final installment.<br/>// domain, hosting, and code stay in your accounts either way.</p>
+<p class="fineprint">Pick 3 payments and the site is still yours at launch — not after the final installment. Domain, hosting, and code stay in your accounts either way.</p>
 </div>
 </section>
 <!-- ============ 03 · PRODUCTION ============ -->
@@ -611,7 +612,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </div>
 <div style="display:grid;justify-items:start">
 <a class="btn btn-ember" href="index.html#contact">Book a Free Strategy Call</a>
-<a class="tel-inline" href="tel:+14086343473">// or call <b>(408) 634-3473</b></a>
+<a class="tel-inline" href="tel:+14086343473">Or call <b>(408) 634-3473</b></a>
 </div>
 </div>
 </section>
