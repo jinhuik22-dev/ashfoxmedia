@@ -202,10 +202,10 @@ footer{background:var(--ink);color:var(--white);padding:28px 0}
 /* ================= shared sub-page components ================= */
 
 /* sub-page hero (no gear) */
-header.subhero{padding:150px 0 80px;border-bottom:2px solid var(--ink);background:var(--paper)}
-header.subhero h1.display{font-size:clamp(2.4rem,6vw,4.6rem);max-width:15em}
-header.subhero .hero-sub{margin-top:26px}
-header.subhero .hero-note{font-family:var(--mono);font-size:12.5px;color:var(--gray);margin-top:18px;max-width:60ch;line-height:1.6}
+header.subhero{padding:110px 0 40px;border-bottom:2px solid var(--ink);background:var(--paper)}
+header.subhero h1.display{font-size:clamp(2rem,4.6vw,3.4rem);max-width:15em}
+header.subhero .hero-sub{margin-top:16px;font-size:.96rem;max-width:56em}
+header.subhero .hero-note{font-family:var(--mono);font-size:12.5px;color:var(--gray);margin-top:14px;max-width:60ch;line-height:1.6}
 header.subhero .hero-note b{color:var(--ink)}
 .phero-logo{margin-top:28px}
 .phero-logo img{height:38px}
@@ -261,17 +261,18 @@ header.subhero .hero-note b{color:var(--ink)}
 @media (max-width:680px){.steps{grid-template-columns:1fr}.step{border-right:none;border-bottom:2px solid var(--ink)}.step:last-child{border-bottom:none}}
 
 /* pricing tabs */
-.tabsbar{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:64px;z-index:40}
-.tablist{display:flex;gap:0}
-.tab{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-right:2px solid var(--ink);padding:18px 26px;color:var(--gray);cursor:pointer}
-.tab:last-child{border-right:none}
+.tabsbar{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:64px;z-index:40;padding:22px 0}
+.tabsbar .wrap{display:flex;justify-content:center}
+.tablist{display:inline-flex;background:var(--ink);border-radius:999px;padding:5px;gap:2px}
+.tab{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-radius:999px;padding:14px 28px;color:var(--white);cursor:pointer;transition:background .15s ease,color .15s ease}
+.tab:hover{background:var(--white);color:var(--ink)}
 .tab[aria-selected="true"]{color:var(--ink);background:var(--white)}
 .tab .soon{font-size:10px;color:var(--red);margin-left:6px}
 .panel{display:none}
 .panel.active{display:block}
 
 /* pricing cards (reskinned as gallery grid) */
-.panel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
 .panel-head h2{font-family:var(--body);font-weight:900;text-transform:uppercase;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.01em;margin-top:8px}
 .toggle{display:flex;border:2px solid var(--ink)}
 .toggle button{background:var(--white);border:none;border-right:1px solid var(--ink);color:var(--ink);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;padding:10px 16px;cursor:pointer}
@@ -392,7 +393,7 @@ Ashfox Media
 </div>
 </div>
 
-<section aria-labelledby="tab-ads" class="panel" id="panel-ads" role="tabpanel" style="padding-top:70px">
+<section aria-labelledby="tab-ads" class="panel" id="panel-ads" role="tabpanel" style="padding-top:40px">
 <div class="wrap">
 <div class="panel-head">
 <div>
@@ -457,7 +458,7 @@ Ashfox Media
 </div>
 </section>
 
-<section aria-labelledby="tab-web" class="panel active" id="panel-web" role="tabpanel" style="padding-top:70px">
+<section aria-labelledby="tab-web" class="panel active" id="panel-web" role="tabpanel" style="padding-top:40px">
 <div class="wrap">
 <div class="panel-head">
 <div>
@@ -526,7 +527,7 @@ Ashfox Media
 </div>
 </section>
 
-<section aria-labelledby="tab-prod" class="panel" id="panel-prod" role="tabpanel" style="padding-top:70px">
+<section aria-labelledby="tab-prod" class="panel" id="panel-prod" role="tabpanel" style="padding-top:40px">
 <div class="wrap">
 <div class="panel-head">
 <div>
